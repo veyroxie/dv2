@@ -8,12 +8,6 @@
 <body>
   <h1>Doing Time</h1>
   <div id="radial-chart"></div> <!-- For Radial Chart -->
-
-  <h2>Heat Map of Violence Against Women Cases</h2>
-  <div id="heatmap-chart"></div> <!-- For Horizontal Heat Map -->
-  
-  <h2>Crime Rate Index by Country</h2>
-  <div id="geo-chart"></div> <!-- For Geographic Chart -->
   
   <script>
     // Radial Stacked Bar Chart Spec
@@ -66,6 +60,7 @@
     // Heat Map Spec
     const heatmapSpec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+       "title": "Violence against Women",
       "data": {
         "url": "https://raw.githubusercontent.com/veyroxie/csv/refs/heads/main/violence%20against%20women%20-%20Sheet1.csv",
         "format": {"type": "csv"}
