@@ -4,16 +4,50 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+  <style>
+    body {
+      text-align: center; /* Center all text */
+      font-family: Arial, sans-serif; /* Optional: Set a font style */
+    }
+    .chart-container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      margin: 20px; /* Add some margin */
+    }
+    .row {
+      display: flex; /* Create a flex container for rows */
+      justify-content: center; /* Center the content */
+      gap: 50px; /* Space between charts */
+    }
+    h1, h2 {
+      margin-bottom: 20px; /* Space below headers */
+    }
+  </style>
 </head>
 <body>
   <h1>Doing Time</h1>
-  <div id="radial-chart"></div> <!-- For Radial Chart -->
   
+  <div class="chart-container">
+    <div class="row">
+      <div>
+        <h2>Heat Map of Violence Against Women Cases</h2>
+        <div id="heat-map"></div> <!-- For Heat Map -->
+      </div>
+      <div>
+        <h2>Prisoner Index by State</h2>
+        <div id="radial-chart"></div> <!-- For Radial Chart -->
+      </div>
+    </div>
+    
+    <h2>Crime Rate Index by Country</h2>
+    <div id="geo-chart"></div> <!-- For Geographic Chart -->
+  </div>
+
   <script>
-    // Radial Stacked Bar Chart Spec
+    // Radial Chart Spec
     const radialSpec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "title": "Prisoner Index by State",
       "data": {
         "url": "https://raw.githubusercontent.com/veyroxie/FIT3179-diff-format/refs/heads/main/long%20format%20-%20Sheet1.csv",
         "format": {"type": "csv"}
@@ -47,7 +81,7 @@
         "color": {
           "field": "State",
           "type": "nominal",
-          "scale": {"scheme": "category10"}, // Improved color scheme
+          "scale": {"scheme": "category10"},
           "legend": {"title": "State"}
         },
         "tooltip": [
@@ -58,9 +92,8 @@
     };
 
     // Heat Map Spec
-    const heatmapSpec = {
+    const heatMapSpec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-       "title": "Violence against Women",
       "data": {
         "url": "https://raw.githubusercontent.com/veyroxie/csv/refs/heads/main/violence%20against%20women%20-%20Sheet1.csv",
         "format": {"type": "csv"}
@@ -173,7 +206,7 @@
     // Embed the radial chart
     vegaEmbed("#radial-chart", radialSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
     // Embed the heat map
-    vegaEmbed("#heatmap-chart", heatmapSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed("#heat-map", heatMapSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
     // Embed the geographic chart
     vegaEmbed("#geo-chart", geoSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
   </script>
