@@ -1,218 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
   <style>
-    body {
-      text-align: center; /* Center all text */
-      font-family: Arial, sans-serif; /* Optional: Set a font style */
-    }
-    .chart-container {
+    #map {
       display: flex;
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center items horizontally */
-      margin: 20px; /* Add some margin */
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1000px;
+      padding: 0;
     }
-    .row {
-      display: flex; /* Create a flex container for rows */
-      justify-content: center; /* Center the content */
-      gap: 50px; /* Space between charts */
+
+    @font-face {
+      font-family: 'GovernmentAgent';
+      src: url('https://raw.githubusercontent.com/veyroxie/dv2/main/GovtAgentBB_ital.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
     }
-    h1, h2 {
-      margin-bottom: 20px; /* Space below headers */
+
+    h3,
+    html {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      text-align: center;
+      color: #be6115;
+      font-weight: bold;
+    }
+
+    body,
+    html {
+      font-family: 'Poppins', sans-serif;
+      src: url('https://github.com/veyroxie/dv2/blob/main/Poppins-Medium.ttf') format('ttf');
+      font-weight: normal;
+      font-style: normal;
+      color: white;
+      max-width: 60ch;
+      margin: 0 auto;
+      word-wrap: break-word;
+      font-size: large;
+      background-color: transparent;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/hearst_newspaper_2_1050x700.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    .background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    .background::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.801);
+      z-index: 0;
+    }
+
+    .translucent-overlay {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'GovernmentAgent', sans-serif;
+      font-weight: 700;
+      font-size: 4em;
+      text-align: center;
+      color: #be6115;
     }
   </style>
+  <title>Basic Template</title>
 </head>
+
 <body>
+  <div class="background"></div>
+
+  <br>
   <h1>Life Behind Bars</h1>
-  
-  <div class="chart-container">
-    <div class="row">
-      <div>
-        <h3>Violence Against Women Cases</h3>
-        <div id="heat-map"></div> <!-- For Heat Map -->
-      </div>
-      <div>
-        <h3>Prisoner Index by State</h3>
-        <div id="radial-chart"></div> <!-- For Radial Chart -->
-      </div>
-    </div>
-    
-    <h3>Crime Rate Index Around the World</h3>
-    <div id="geo-chart"></div> <!-- For Geographic Chart -->
-  </div>
+  <h3>
+    By Elyesa Tee Way Yien (33442150)
+  </h3>
+  <br>
+  <br>
+  <p>
+    As of 2024, Malaysia holds the 58th position in the international crime index, classifying it as a country with
+    moderately high crime rates, according to global standards. Here is a wider view of the crime index across
+    countries.
+    <br>
+    <br>
+    <br>
+    <br>
+  </p>
+
+  <div id="map"></div>
 
   <script>
-    // Radial Chart Spec
-    const radialSpec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "data": {
-        "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/top%205%20prisoner%20indexes%20per%20100%2C000.csv",
-        "format": {"type": "csv"}
-      },
-      "params": [
-        {
-          "name": "selectedYear",
-          "value": 2017,
-          "bind": {
-            "input": "select",
-            "options": [2017, 2018, 2019, 2020, 2021, 2022],
-            "name": "Select Year: "
-          }
-        }
-      ],
-      "transform": [
-        {"filter": "datum.Year == selectedYear"},
-        {"filter": {"field": "Metric", "equal": "Prisoner Index (per 100,000)"}}
-      ],
-      "mark": {
-        "type": "arc",
-        "innerRadius": 50,
-        "outerRadius": 100
-      },
-      "encoding": {
-        "theta": {
-          "field": "Value",
-          "type": "quantitative",
-          "stack": true
-        },
-        "color": {
-          "field": "State",
-          "type": "nominal",
-          "scale": {"scheme": "category10"},
-          "legend": {"title": "State"}
-        },
-        "tooltip": [
-          {"field": "State", "type": "nominal"},
-          {"field": "Value", "type": "quantitative", "title": "Prisoner Index (per 100,000)"}
-        ]
-      }
-    };
-
-    // Heat Map Spec
-    const heatMapSpec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "data": {
-        "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/violence%20against%20women.csv",
-        "format": {"type": "csv"}
-      },
-      "mark": "rect",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal",
-          "axis": {"title": "Year"}
-        },
-        "y": {
-          "field": "Type of Case",
-          "type": "nominal",
-          "axis": {"title": "Type of Case"}
-        },
-        "color": {
-          "field": "Count",
-          "type": "quantitative",
-          "scale": {"scheme": "blues"},
-          "title": "Number of Cases"
-        },
-        "tooltip": [
-          {"field": "Type of Case", "type": "nominal"},
-          {"field": "Year", "type": "ordinal"},
-          {"field": "Count", "type": "quantitative"}
-        ]
-      },
-      "config": {
-        "axis": {
-          "labelFontSize": 12,
-          "titleFontSize": 14
-        }
-      }
-    };
-
     // Geographic Chart Spec
-    const geoSpec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Crime Rate Index by Country",
-  "width": 800,
-  "height": 400,
-  "projection": {"type": "equalEarth"},
-  "layer": [
-    {
-      "data": {"sphere": true},
-      "mark": {
-        "type": "geoshape",
-        "fill": "#dbefff",
-        "stroke": null
-      }
-    },
-    {
-      "data": {"graticule": true},
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#cccccc",
-        "strokeWidth": 0.5
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    const map = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "title": {
+        "text": "Crime Rate Index by Country",
+        "fontSize": 25,
+        "color": "lightgray"
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      },
-      "encoding": {
-        "tooltip": [
-          {"field": "properties.NAME", "type": "nominal", "title": "Country: "}
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-      },
-      "transform": [
+      "width": 1000,
+      "height": 500,
+      "background": null,
+      "projection": { "type": "equalEarth" },
+      "layer": [
         {
-          "lookup": "properties.NAME",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/veyroxie/FIT3179-Homework-W9/main/crime-rate-by-country-2024.csv",
-              "format": {"type": "csv"}
+          "data": { "sphere": true },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#dbefff",
+            "stroke": null
+          }
+        },
+        {
+          "data": { "graticule": true },
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#cccccc",
+            "strokeWidth": 0.5
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgray",
+            "stroke": "black"
+          },
+          "encoding": {
+            "tooltip": [
+              { "field": "properties.NAME", "type": "nominal", "title": "Country: " }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+          },
+          "transform": [
+            {
+              "lookup": "properties.NAME",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/veyroxie/FIT3179-Homework-W9/main/crime-rate-by-country-2024.csv",
+                  "format": { "type": "csv" }
+                },
+                "key": "country",
+                "fields": ["crimeRateByCountry_crimeIndex"]
+              }
+            }
+          ],
+          "mark": { "type": "geoshape" },
+          "encoding": {
+            "color": {
+              "field": "crimeRateByCountry_crimeIndex",
+              "type": "quantitative",
+              "title": "Crime Rate Index",
+              "scale": { "type": "log", "scheme": "blueorange" },
+              "legend": { "title": "Crime Rate Index", "labelColor": "lightgray", "titleColor": "lightgray" }
             },
-            "key": "country",
-            "fields": ["crimeRateByCountry_crimeIndex"]
+            "tooltip": [
+              { "field": "properties.NAME", "type": "nominal", "title": "Country: " },
+              { "field": "crimeRateByCountry_crimeIndex", "type": "quantitative", "title": "Crime Index: " }
+            ]
+          }
+        },
+        {
+          // Add an image marker for Malaysia
+          "mark": {
+            "type": "image",
+            "url": "https://github.com/veyroxie/dv2/blob/main/png-clipart-emoji-drawing-pin-sms-text-messaging-emoji-multimedia-messaging-service-pin-thumbnail.png",  // Replace with the URL of your image
+            "width": 30,
+            "height": 30
+          },
+          "encoding": {
+            "longitude": { "value": 101.9758 }, // Longitude for Malaysia
+            "latitude": { "value": 4.2105 }    // Latitude for Malaysia
           }
         }
-      ],
-      "mark": {"type": "geoshape"},
-      "encoding": {
-        "color": {
-          "field": "crimeRateByCountry_crimeIndex",
-          "type": "quantitative",
-          "title": "Crime Rate Index",
-          "scale": {"type": "log", "scheme": "reds"},
-          "legend": {"title": "Crime Rate Index"}
-        },
-        "tooltip": [
-          {"field": "properties.NAME", "type": "nominal", "title": "Country: "},
-          {"field": "crimeRateByCountry_crimeIndex", "type": "quantitative", "title": "Crime Index: "}
-        ]
-      }
-    }
-  ]
-
+      ]
     };
 
-    // Embed the radial chart
-    vegaEmbed("#radial-chart", radialSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
-    // Embed the heat map
-    vegaEmbed("#heat-map", heatMapSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
-    // Embed the geographic chart
-    vegaEmbed("#geo-chart", geoSpec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    // Embed the geographic chart in the div with id="map"
+    vegaEmbed("#map", map, { mode: "vega-lite" }).then(console.log).catch(console.warn);
   </script>
+
 </body>
+
 </html>
