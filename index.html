@@ -38,6 +38,8 @@
       font-weight: bold;
     }
 
+  
+
     body,
     html {
       font-family: 'Poppins', sans-serif;
@@ -47,6 +49,7 @@
       color: white;
       max-width: 60ch;
       margin: 0 auto;
+      padding: 0;
       word-wrap: break-word;
       font-size: large;
       background-color: transparent;
@@ -110,8 +113,34 @@
       text-align: center;
       color: #be6115;
     }
+
+    .header-container {
+      display: flex;
+      text-align: left;
+      align-items: center;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .header-bar {
+      background-color: rgb(134, 72, 2);
+      height: 50px;
+      width: 100vw;
+      position: fixed;
+      left: 0;
+      z-index: -1;
+    }
+
+    .header-text {
+      z-index: 1;
+      position: relative;
+      color: rgba(255, 255, 255, 0.884);
+      font-size: 25px;
+      font-weight: bold;
+    }
+    
   </style>
-  <title>Basic Template</title>
+  <title>Crime Rates in Malaysia</title>
 </head>
 
 <body>
@@ -134,17 +163,17 @@
     <br>
   </p>
 
+  <div class="header-container">
+    <div class="header-bar"></div>
+    <h2 class="header-text">Crime Rate Index by Country</h2>
+  </div>
+
   <div id="map"></div>
 
   <script>
     // Geographic Chart Spec
     const map = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "title": {
-        "text": "Crime Rate Index by Country",
-        "fontSize": 25,
-        "color": "lightgray"
-      },
       "width": 1000,
       "height": 500,
       "background": null,
