@@ -15,7 +15,7 @@
       align-items: center;
       margin: 0 auto;
       width: 100%;
-      max-width: 1000px;
+      max-width: 100%;
       padding: 0;
     }
 
@@ -47,12 +47,14 @@
       font-weight: normal;
       font-style: normal;
       color: white;
-      max-width: 60ch;
+      <!-- max-width: 60ch; -->
       margin: 0 auto;
       padding: 0;
       word-wrap: break-word;
       font-size: large;
       background-color: transparent;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .background {
@@ -126,7 +128,7 @@
       background-color: rgb(134, 72, 2);
       height: 50px;
       width: 100vw;
-      position: fixed;
+      position: l;
       left: 0;
       z-index: -1;
     }
@@ -203,7 +205,7 @@
           "mark": {
             "type": "geoshape",
             "fill": "lightgray",
-            "stroke": "black"
+            "stroke": "darkgray"
           },
           "encoding": {
             "tooltip": [
@@ -263,6 +265,23 @@
     // Embed the geographic chart in the div with id="map"
     vegaEmbed("#map", map, { mode: "vega-lite" }).then(console.log).catch(console.warn);
   </script>
+
+  <br>
+  <p>
+    <span style="color: rgb(182, 181, 181)">Note: The gray areas represent countries with missing data.</span>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    At the time this dataset was collected, Venezuela had the highest crime rate index, while United Arab Emirates had the lowest.
+  </p>
 
 </body>
 
