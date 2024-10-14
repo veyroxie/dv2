@@ -38,8 +38,6 @@
       font-weight: bold;
     }
 
-  
-
     body,
     html {
       font-family: 'Poppins', sans-serif;
@@ -47,7 +45,6 @@
       font-weight: normal;
       font-style: normal;
       color: white;
-      <!-- max-width: 60ch; -->
       margin: 0 auto;
       padding: 0;
       word-wrap: break-word;
@@ -118,29 +115,32 @@
 
     .header-container {
       display: flex;
-      text-align: left;
       align-items: center;
       position: relative;
       margin-bottom: 10px;
+      text-align: right;
     }
 
     .header-bar {
       background-color: rgb(134, 72, 2);
       height: 50px;
       width: 100vw;
-      position: l;
-      left: 0;
-      z-index: -1;
+      top: 100px;
+      left: -50px;
+      z-index: 1;
     }
 
     .header-text {
-      z-index: 1;
-      position: relative;
-      color: rgba(255, 255, 255, 0.884);
+      left: 20px;
+      /* Set distance from the left edge of the page */
+      top: 100px;
+      /* Align with the bar's top position */
+      z-index: 2;
+      color: rgba(255, 189, 135, 0.979);
       font-size: 25px;
       font-weight: bold;
+      padding-right: 10px;
     }
-    
   </style>
   <title>Crime Rates in Malaysia</title>
 </head>
@@ -166,8 +166,8 @@
   </p>
 
   <div class="header-container">
-    <div class="header-bar"></div>
     <h2 class="header-text">Crime Rate Index by Country</h2>
+    <div class="header-bar"></div>
   </div>
 
   <div id="map"></div>
@@ -280,7 +280,8 @@
     <br>
     <br>
     <br>
-    At the time this dataset was collected, Venezuela had the highest crime rate index, while United Arab Emirates had the lowest.
+    At the time this dataset was collected, Venezuela had the highest crime rate index, while United Arab Emirates had
+    the lowest.
   </p>
 
 </body>
