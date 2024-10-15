@@ -1,185 +1,24 @@
-Type of crime,Details,Year,Value
-Attempted murder,,2000 ,43
-Causing bodily injuries,,2000 ,5104
-Murder,,2000 ,551
-Rape,,2000 ,1210
-Robbery,With firearms,2000 ,89
-Robbery,Without firearms,2000 ,1681
-Robbery(b),With firearms,2000 ,722
-Robbery(b),Without firearms,2000 ,12204
-Attempted murder,,2001 ,68
-Causing bodily injuries,,2001 ,4699
-Murder,,2001 ,608
-Rape,,2001 ,1354
-Robbery,With firearms,2001 ,65
-Robbery,Without firearms,2001 ,1697
-Robbery(b),With firearms,2001 ,566
-Robbery(b),Without firearms,2001 ,11333
-Attempted murder,,2002 ,64
-Causing bodily injuries,,2002 ,4440
-Murder,,2002 ,516
-Rape,,2002 ,1418
-Robbery,With firearms,2002 ,73
-Robbery,Without firearms,2002 ,1704
-Robbery(b),With firearms,2002 ,425
-Robbery(b),Without firearms,2002 ,12203
-Attempted murder,,2003 ,77
-Causing bodily injuries,,2003 ,4368
-Murder,,2003 ,565
-Rape,,2003 ,1471
-Robbery,With firearms,2003 ,45
-Robbery,Without firearms,2003 ,1920
-Robbery(b),With firearms,2003 ,381
-Robbery(b),Without firearms,2003 ,13963
-Attempted murder,,2004 ,92
-Causing bodily injuries,,2004 ,4196
-Murder,,2004 ,565
-Rape,,2004 ,1718
-Robbery,With firearms,2004 ,44
-Robbery,Without firearms,2004 ,1689
-Robbery(b),With firearms,2004 ,334
-Robbery(b),Without firearms,2004 ,13221
-Attempted murder,,2005 ,94
-Causing bodily injuries,,2005 ,4246
-Murder,,2005 ,497
-Rape,,2005 ,1887
-Robbery,With firearms,2005 ,40
-Robbery,Without firearms,2005 ,1842
-Robbery(b),With firearms,2005 ,317
-Robbery(b),Without firearms,2005 ,13210
-Attempted murder,,2006 ,-
-Causing bodily injuries,,2006 ,5843
-Murder,,2006 ,606
-Rape,,2006 ,2454
-Robbery,With firearms,2006 ,-
-Robbery,Without firearms,2006 ,-
-Robbery(b),With firearms,2006 ,315
-Robbery(b),Without firearms,2006 ,22190
-Attempted murder,,2007,-
-Causing bodily injuries,,2007,6806
-Murder,,2007,588
-Rape,,2007,3177
-Robbery,With firearms,2007,-
-Robbery,Without firearms,2007,-
-Robbery(b),With firearms,2007,202
-Robbery(b),Without firearms,2007,17241
-Attempted murder,,2008 ,-
-Causing bodily injuries,,2008 ,6648
-Murder,,2008 ,654
-Rape,,2008 ,3494
-Robbery,With firearms,2008 ,-
-Robbery,Without firearms,2008 ,-
-Robbery(b),With firearms,2008 ,258
-Robbery(b),Without firearms,2008 ,26763
-Attempted murder,,2009 ,-
-Causing bodily injuries,,2009 ,8302
-Murder,,2009 ,571
-Rape,,2009 ,3742
-Robbery,With firearms,2009 ,-
-Robbery,Without firearms,2009 ,-
-Robbery(b),With firearms,2009 ,1035
-Robbery(b),Without firearms,2009 ,28365
-Attempted murder,,2010 ,-
-Causing bodily injuries,,2010 ,7685
-Murder,,2010 ,487
-Rape,,2010 ,3382
-Robbery,With firearms,2010 ,-
-Robbery,Without firearms,2010 ,-
-Robbery(b),With firearms,2010 ,2345
-Robbery(b),Without firearms,2010 ,18988
-Attempted murder,,2011 ,-
-Causing bodily injuries,,2011 ,6048
-Murder,,2011 ,446
-Rape,,2011 ,3026
-Robbery,With firearms,2011 ,-
-Robbery,Without firearms,2011 ,-
-Robbery(b),With firearms,2011 ,408
-Robbery(b),Without firearms,2011 ,19606
-Attempted murder,,2012 ,-
-Causing bodily injuries,,2012 ,6244
-Murder,,2012 ,602
-Rape,,2012 ,2964
-Robbery,With firearms,2012 ,-
-Robbery,Without firearms,2012 ,-
-Robbery(b),With firearms,2012 ,127
-Robbery(b),Without firearms,2012 ,20013
-Attempted murder,,2013 ,-
-Causing bodily injuries,,2013 ,5699
-Murder,,2013 ,627
-Rape,,2013 ,2718
-Robbery,With firearms,2013 ,-
-Robbery,Without firearms,2013 ,-
-Robbery(b),With firearms,2013 ,119
-Robbery(b),Without firearms,2013 ,20212
-Attempted murder,,2014 ,-
-Causing bodily injuries,,2014 ,5608
-Murder,,2014 ,510
-Rape,,2014 ,2296
-Robbery,With firearms,2014 ,-
-Robbery,Without firearms,2014 ,-
-Robbery(b),With firearms,2014 ,113
-Robbery(b),Without firearms,2014 ,16941
-Attempted murder,,2015 ,-
-Causing bodily injuries,,2015 ,5516
-Murder,,2015 ,499
-Rape,,2015 ,2047
-Robbery,With firearms,2015 ,-
-Robbery,Without firearms,2015 ,-
-Robbery(b),With firearms,2015 ,76
-Robbery(b),Without firearms,2015 ,13672
-Attempted murder,,2016 ,-
-Causing bodily injuries,,2016 ,5531
-Murder,,2016 ,456
-Rape,,2016 ,1886
-Robbery,With firearms,2016 ,-
-Robbery,Without firearms,2016 ,-
-Robbery(b),With firearms,2016 ,83
-Robbery(b),Without firearms,2016 ,14370
-Attempted murder,,2017 ,-
-Causing bodily injuries,,2017 ,6995
-Murder,,2017 ,382
-Rape,,2017 ,1833
-Robbery,With firearms,2017 ,-
-Robbery,Without firearms,2017 ,-
-Robbery(b),With firearms,2017 ,27
-Robbery(b),Without firearms,2017 ,12143
-Attempted murder,,2018 ,-
-Causing bodily injuries,,2018 ,4660
-Murder,,2018 ,323
-Rape,,2018 ,1648
-Robbery,With firearms,2018 ,-
-Robbery,Without firearms,2018 ,-
-Robbery(b),With firearms,2018 ,40
-Robbery(b),Without firearms,2018 ,10231
-Attempted murder,,2019 ,-
-Causing bodily injuries,,2019 ,4712
-Murder,,2019 ,310
-Rape,,2019 ,1738
-Robbery,With firearms,2019 ,-
-Robbery,Without firearms,2019 ,-
-Robbery(b),With firearms,2019 ,30
-Robbery(b),Without firearms,2019 ,9699
-Attempted murder,,2020,-
-Causing bodily injuries,,2020,4118
-Murder,,2020,253
-Rape,,2020,1582
-Robbery,With firearms,2020,-
-Robbery,Without firearms,2020,-
-Robbery(b),With firearms,2020,11
-Robbery(b),Without firearms,2020,7315
-Attempted murder,,2021,-
-Causing bodily injuries,,2021,4063
-Murder,,2021,243
-Rape,,2021,1553
-Robbery,With firearms,2021,-
-Robbery,Without firearms,2021,-
-Robbery(b),With firearms,2021,7
-Robbery(b),Without firearms,2021,5629
-Attempted murder,,2022,-
-Causing bodily injuries,,2022,3807
-Murder,,2022,240
-Rape,,2022,1712
-Robbery,With firearms,2022,-
-Robbery,Without firearms,2022,-
-Robbery(b),With firearms,2022,23
-Robbery(b),Without firearms,2022,4566
+Year,Population,Attempted murder,Causing bodily injuries,Murder,Rape,Robbery (with firearms),Robbery (without firearms)
+2000,22945150,0.18740343819935804,22.2443522923145,2.401378940647588,5.273445586540075,0.387881534877741,7.326166967746996
+2001,23542517,0.2888391245507012,19.959633033290366,2.5825615842180345,5.751296685906609,0.27609622199699374,7.208235211213823
+2002,24142445,0.2650932828054491,18.39084649462803,2.137314592618933,5.873473047158231,0.30237202569996535,7.058108654695082
+2003,24739411,0.31124427335800353,17.656038779581294,2.283805382432104,5.945978261163938,0.18189600391052155,7.760896166848919
+2004,25333247,0.36315913234493785,16.563214340427816,2.230270758422716,6.781602058354384,0.17368480242583983,6.667127984028262
+2005,25923536,0.36260485452293234,16.378938428769903,1.9171767308286956,7.279099579625249,0.15429993809486484,7.105512149268526
+2006,26509413,0.0,22.041227393454545,2.2859804553197764,9.257089170552362,0.0,0.0
+2007,27092604,0.0,25.121247112311536,2.170334014404817,11.726447557421944,0.0,0.0
+2008,27664296,0.0,24.03097479870805,2.364057990125612,12.629997886083924,0.0,0.0
+2009,28217204,0.0,29.42176694756858,2.023588162739299,13.261413143555968,0.0,0.0
+2010,28717731,0.0,26.76047073496162,1.6958164278368648,11.776696424936915,0.0,0.0
+2011,29184133,0.0,20.723589767083368,1.5282276845435154,10.368647922485826,0.0,0.0
+2012,29660212,0.0,21.051771308984577,2.0296550813594996,9.993185483637136,0.0,0.0
+2013,30134807,0.0,18.91168574598802,2.0806504584549024,9.019470408421729,0.0,0.0
+2014,30606459,0.0,18.3229298103384,1.6663149435222155,7.5016845300529535,0.0,0.0
+2015,31068833,0.0,17.75412678036539,1.6061111790069489,6.588596359573596,0.0,0.0
+2016,31526418,0.0,17.544016576827726,1.4464059951244699,5.982284444747259,0.0,0.0
+2017,31975806,0.0,21.875914558651,1.1946532325096044,5.732459097356295,0.0,0.0
+2018,32399271,0.0,14.38303966777524,0.996936011307168,5.086534200105922,0.0,0.0
+2019,32804020,0.0,14.364093181262541,0.9450061303462197,5.298131143683,0.0,0.0
+2020,33199993,0.0,12.403617073051791,0.76204835344393,4.765061245645444,0.0,0.0
+2021,33573874,0.0,12.101671674826683,0.7237770654646527,4.625620504800846,0.0,0.0
+2022,33938221,0.0,11.217441244194857,0.7071672967183519,5.044460049924243,0.0,0.0
