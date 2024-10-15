@@ -93,13 +93,13 @@
     }
 
     .translucent-overlay {
-      display: inline-block;  /* Makes the width fit the content */
+      display: inline-block;
       background-color: rgba(248, 187, 107, 0.4);
       padding: 20px;
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      max-width: 100%;  /* Ensures it doesn't exceed the screen width */
+      max-width: 100%;
     }
 
     h1 {
@@ -129,9 +129,7 @@
 
     .header-text {
       left: 20px;
-      /* Set distance from the left edge of the page */
       top: 100px;
-      /* Align with the bar's top position */
       z-index: 2;
       color: rgba(255, 189, 135, 0.979);
       font-size: 25px;
@@ -140,14 +138,10 @@
       padding-left: 0px;
     }
 
-
     .text-content {
       max-width: 45ch;
-      /* Adjust this value according to your font size and type */
       margin: 0 auto;
-      /* Center the text block */
       text-align: center;
-      /* Optional: Justify text for better appearance */
       font-size: large;
     }
 
@@ -156,12 +150,11 @@
       text-decoration: none;
       cursor: pointer;
     }
-    
-    #annotations a:hover {
-      color: #ff6347;  /* Change color on hover (currently tomato color) */
-      text-decoration: underline;  /* Optional: Adds underline on hover */
-    }
 
+    #annotations a:hover {
+      color: #ff6347;
+      text-decoration: underline;
+    }
   </style>
   <title>Crime Rates in Malaysia</title>
 </head>
@@ -180,19 +173,15 @@
   <div class="text-content">
     <p>
       As of 2024, Malaysia holds the <span style="color:orange">58th</span> position in the international crime index,
-      classifying it as a country with
-      moderately high crime rates, according to global standards.
-
+      classifying it as a country with moderately high crime rates, according to global standards.
       <br>
       <br>
       <span style="color: rgb(182, 181, 181)">Below is a wider view of the crime index across
         countries. </span>
-      <br>    
+      <br>
       <br>
     </p>
-
   </div>
-
 
   <div class="header-container">
     <h2 class="header-text">Crime Rate <br>Index by Country</h2>
@@ -202,111 +191,25 @@
   <div id="map"></div>
 
   <script>
-    // Geographic Chart Spec
-    const map = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "width": 900,
-      "height": 500,
-      "background": null,
-      "projection": { "type": "equalEarth" },
-      "legend": {
-        "position": "top"
-      },
-      "layer": [
-        {
-          "data": { "sphere": true },
-          "mark": {
-            "type": "geoshape",
-            "fill": "#dbefff",
-            "stroke": null
-          }
-        },
-        {
-          "data": { "graticule": true },
-          "mark": {
-            "type": "geoshape",
-            "stroke": "#cccccc",
-            "strokeWidth": 0.5
-          }
-        },
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
-            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
-          },
-          "mark": {
-            "type": "geoshape",
-            "fill": "lightgray",
-            "stroke": "darkgray"
-          },
-          "encoding": {
-            "tooltip": [
-              { "field": "properties.NAME", "type": "nominal", "title": "Country: " }
-            ]
-          }
-        },
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
-            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
-          },
-          "transform": [
-            {
-              "lookup": "properties.NAME",
-              "from": {
-                "data": {
-                  "url": "https://raw.githubusercontent.com/veyroxie/FIT3179-Homework-W9/main/crime-rate-by-country-2024.csv",
-                  "format": { "type": "csv" }
-                },
-                "key": "country",
-                "fields": ["crimeRateByCountry_crimeIndex"]
-              }
-            }
-          ],
-          "mark": { "type": "geoshape" },
-          "encoding": {
-            "color": {
-              "field": "crimeRateByCountry_crimeIndex",
-              "type": "quantitative",
-              "title": "Crime Rate Index",
-              "scale": { 
-                "type": "log", 
-                "scheme": "Plasma",
-                "reverse": true },
-              "legend": { "title": "Crime Rate Index", "labelColor": "lightgray", "titleColor": "lightgray" }
-            },
-            "tooltip": [
-              { "field": "properties.NAME", "type": "nominal", "title": "Country: " },
-              { "field": "crimeRateByCountry_crimeIndex", "type": "quantitative", "title": "Crime Index: " }
-            ]
-          }
-        }
-      ]
-    };
-
-    // Embed the geographic chart in the div with id="map"
-    vegaEmbed("#map", map, { mode: "vega-lite" }).then(console.log).catch(console.warn);
+    // Load the map specification from GitHub
+    vegaEmbed("#map", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/map.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
   </script>
 
-
-<div class="text-content">
-  <p>
-    <span style="color: rgb(182, 181, 181)">Note: The gray areas represent countries with missing data.</span>
+  <div class="text-content">
+    <p>
+      <span style="color: rgb(182, 181, 181)">Note: The gray areas represent countries with missing data.</span>
+      <br>
+      <br>
+      <br>
+      At the time this dataset was collected, Venezuela had the highest crime rate index <strong>(82.1)</strong>, while
+      United Arab Emirates had the lowest <strong>(14.6)</strong>.
+    </p>
     <br>
     <br>
     <br>
-    At the time this dataset was collected, Venezuela had the highest crime rate index <strong>(82.1)</strong>, while
-    United Arab Emirates had
-    the lowest <strong>(14.6)</strong>.
-  </p>
-
-  <br>
-  <br>
-  <br>
-</div>
-
-
-
+  </div>
 
   <!-- Header for the Prisoner Index Lollipop Chart -->
   <div class="header-container">
@@ -316,175 +219,23 @@
 
   <div class="text-content">
     <p>
-
       <br>
       Now, for a closer look at the crime indexes in Malaysian states. The chart below has been filtered to show the 5
       states with the highest prisoner indexes per 100,000 people from <span style="font-style: oblique">2017 to
         2022.</span>
-
     </p>
-
     <br>
     <br>
   </div>
-
-
 
   <!-- Div for the prisoner index chart -->
   <div id="prisoner-chart"></div>
 
   <script>
-    // Crime Index Top 5 Prisoner Chart Spec
-    const prisonerChart = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "width": 650,
-      "height": 400,
-      "background": null,  // Transparent background
-      "data": {
-        "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/top%205%20prisoner%20indexes%20per%20100%2C000.csv",
-        "format": { "type": "csv" }
-      },
-      "params": [
-        {
-          "name": "selectedYear",
-          "value": 2017,
-          "bind": {
-            "input": "select",
-            "options": [2017, 2018, 2019, 2020, 2021, 2022],
-            "name": "Select Year: "
-          }
-        },
-        {
-          "name": "selectedState",  // This will store the specific state to highlight
-          "value": null
-        },
-      ],
-      "transform": [
-        { "filter": "datum.Year == selectedYear" }
-      ],
-      "encoding": {
-        "y": {
-          "field": "State",
-          "type": "nominal",
-          "axis": {
-            "title": "State",
-            "labelFontSize": 14,
-            "titleFontSize": 16,
-            "labelColor": "white",  // White axis labels
-            "titleColor": "white"
-          },
-          "sort": "-x"
-        },
-        "x": {
-          "field": "Value",
-          "type": "quantitative",
-          "axis": {
-            "title": "Prisoner Index (per 100,000)",
-            "labelFontSize": 14,
-            "titleFontSize": 16,
-            "labelColor": "white",  // White axis labels
-            "titleColor": "white"
-          }
-        }
-      },
-      "layer": [
-        {
-          "selection": {
-            "highlight": {
-              "type": "single",
-              "on": "mouseover",
-              "empty": "none"
-            }
-          },
-          "mark": {
-            "type": "circle",
-            "size": 1000,  // Increased circle size for better visibility
-            "tooltip": true
-          },
-          "encoding": {
-            "color": {
-              "condition": [
-                {
-                  "test": "datum.State == selectedState",  // Highlight selected state
-                  "value": "blue"
-                },
-                {
-                  "selection": "highlight",
-                  "value": "red"
-                }
-              ],
-              "value": "orange"  // Default color
-            }
-            ,
-            "tooltip": [
-              { "field": "State", "type": "nominal" },
-              { "field": "Value", "type": "quantitative", "title": "Prisoner Index" }
-            ]
-          }
-        },
-        {
-          "mark": { "type": "rule", "color": "gray", "size": 5 },
-          "encoding": {
-            "y": { "field": "State", "type": "nominal" },
-            "x": { "field": "Value", "type": "quantitative" }
-          }
-        }
-      ],
-      "config": {
-        "axis": {
-          "grid": false,  // Removed gridlines
-          "domainColor": "white"  // White axis lines for better contrast
-        }
-      },
-      "annotations": {
-        "color": "orange",
-        "values": [
-          { "Year": 2017, "State": "Melaka", "Text": "2017 - Melaka had the highest index." },
-          { "Year": 2018, "State": "Kelantan", "Text": "2018 - Kelantan remained stable." },
-          { "Year": 2019, "State": "Selangor/Kuala Lumpur", "Text": "2019 - Selangor/KL peaked." },
-          { "Year": 2020, "State": "Selangor/Kuala Lumpur", "Text": "2020 - Selangor/KL saw a sharp decline." },
-          { "Year": 2021, "State": "Johor", "Text": "2021 - Johor had the lowest index." },
-          { "Year": 2022, "State": "Melaka", "Text": "2022 - Melaka rebounded." }
-        ]
-      },
-      "marks": [
-        {
-          "type": "text",
-          "encode": {
-            "enter": {
-              "href": {
-                "scale": { "domain": ["2017", "2018", "2019", "2020", "2021", "2022"] },
-                "field": "Year"
-              },
-              "color": { "value": "red" },
-              "text": { "value": "Click for Annotation" }
-            },
-            "update": {
-              "state": { "value": "selectedState", "Year": "value" }
-            }
-          }
-        }
-      ]
-    }
-
-      ;
-
-
-    // Embed the prisoner index chart
-    vegaEmbed("#prisoner-chart", prisonerChart, { mode: "vega-lite" }).then(console.log).catch(console.warn);
-    // Function to update the year and highlight the state
-  function changeYear(year, state = null) {
-    prisonerChart.params[0].value = year;  // Update the selected year
-    prisonerChart.params[1].value = state;  // Reset selectedState to null (default color)
-    vegaEmbed("#prisoner-chart", prisonerChart).then((result) => {
-      // Re-render the chart with the updated state
-      if (state) {
-        prisonerChart.params[1].value = state;  // If a state is selected, highlight it
-        vegaEmbed("#prisoner-chart", prisonerChart);  // Re-render the chart to apply the state change
-      }
-    }).catch(console.warn);
-  }
-
+    // Load the prisoner index chart specification from GitHub
+    vegaEmbed("#prisoner-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/lolli.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
   </script>
 
   <br>
@@ -497,151 +248,79 @@
   </div>
 
   <!-- Clickable annotations below the chart -->
-<div class="translucent-overlay">
-  <div id="annotations">
+  <div class="translucent-overlay">
+    <div id="annotations">
+      <p>
+        <a onclick="changeYear(2017, 'Melaka')">2017 - Melaka had the highest index.</a> <br>
+        <a onclick="changeYear(2018, 'Kelantan')">2018 - Kelantan stable, Melaka no longer top 5.</a> <br>
+        <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 - Selangor/KL peaked.</a> <br>
+        <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a sharp decline in prisoners.</a>
+        <br>
+        <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor decreased slightly.</a> <br>
+        <a onclick="changeYear(2022, 'Melaka')">2022 - Melaka rose back to the top.</a>
+      </p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="header-container">
+    <h2 class="header-text">Violent Crime Trend Comparison</h2>
+    <div class="header-bar"></div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <!-- Div for the crime chart -->
+  <div id="crime-chart"></div>
+
+  <script>
+    // Load the parallel coordinates chart specification from GitHub
+    vegaEmbed("#crime-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/parallel-coord.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
+  </script>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="text-content">
     <p>
-      <a onclick="changeYear(2017, 'Melaka')">2017 - Melaka had the highest index.</a> <br>
-      <a onclick="changeYear(2018, 'Kelantan')">2018 - Kelantan stable, Melaka no longer top 5.</a> <br>
-      <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 - Selangor/KL peaked.</a> <br>
-      <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a sharp decline in prisoners.</a> <br>
-      <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor decreased slightly.</a> <br>
-      <a onclick="changeYear(2022, 'Melaka')">2022 - Melaka rose back to the top.</a>
+      Overall, the data shows a <span style="font-size: 1.5em; color: orange; font-weight: bold;">clear decline in
+        violent
+        crimes</span> across Malaysia from 2000 to 2022. While rape and
+      bodily injuries peaked around 2010, they have since dropped by 2022. This <span style="color: orange">overall
+        downward trend</span> reflects the likely
+      success of law enforcement, public safety initiatives, and social interventions in reducing crime rates.
     </p>
   </div>
-</div>
-
-<br>
-<br>
-<br>
-
-
+  <br>
+  <br>
+  <br>
 <div class="header-container">
   <h2 class="header-text">Violent Crime Trend Comparison</h2>
   <div class="header-bar"></div>
 </div>
-<br>
-<br>
-<br>
 
-<!-- Div for the crime chart -->
-<div id="crime-chart"></div>
+<br><br><br>
+
+<!-- Div for the stream chart -->
+<div id="stream-chart"></div>
 
 <script>
-  const crimeChart = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
-    "data": {
-      "values": [
-        { "Crime Type": "Attempted murder", "Year": 2000, "Cases": 0.187 },
-        { "Crime Type": "Causing bodily injuries", "Year": 2000, "Cases": 22.244 },
-        { "Crime Type": "Murder", "Year": 2000, "Cases": 2.401 },
-        { "Crime Type": "Rape", "Year": 2000, "Cases": 5.273 },
-        { "Crime Type": "Robbery with firearms", "Year": 2000, "Cases": 0.388 },
-        { "Crime Type": "Robbery without firearms", "Year": 2000, "Cases": 7.326 },
-        { "Crime Type": "Attempted murder", "Year": 2010, "Cases": 0.0 },
-        { "Crime Type": "Causing bodily injuries", "Year": 2010, "Cases": 26.760 },
-        { "Crime Type": "Murder", "Year": 2010, "Cases": 1.696 },
-        { "Crime Type": "Rape", "Year": 2010, "Cases": 11.777 },
-        { "Crime Type": "Robbery with firearms", "Year": 2010, "Cases": 0.0 },
-        { "Crime Type": "Robbery without firearms", "Year": 2010, "Cases": 0.0 },
-        { "Crime Type": "Attempted murder", "Year": 2022, "Cases": 0.0 },
-        { "Crime Type": "Causing bodily injuries", "Year": 2022, "Cases": 11.217 },
-        { "Crime Type": "Murder", "Year": 2022, "Cases": 0.707 },
-        { "Crime Type": "Rape", "Year": 2022, "Cases": 5.0445 },
-        { "Crime Type": "Robbery with firearms", "Year": 2022, "Cases": 0.0 },
-        { "Crime Type": "Robbery without firearms", "Year": 2022, "Cases": 0.0 }
-      ]
-    },
-    "width": 800,
-    "height": 300,
-    "background": null,
-    "layer": [
-      {
-        "mark": { "type": "rule", "color": "#ccc" },
-        "encoding": {
-          "x": { "field": "Year", "type": "ordinal" },
-        }
-      },
-      {
-        "mark": {
-          "type": "line",
-          "tooltip": true
-        },
-        "encoding": {
-          "color": { "type": "nominal", 
-          "field": "Crime Type",
-          "scale": {
-            "scheme": "dark2"
-          } 
-        },
-        "detail": { "field": "Crime Type" },
-        "opacity": { "value": 0.7 },
-        "x": { "type": "ordinal", "field": "Year" },
-        "y": {
-          "type": "quantitative",
-          "field": "Cases",
-          "axis": null
-        },
-          "tooltip": [
-            { "field": "Year", "type": "ordinal", "title": "Year" },
-            { "field": "Crime Type", "type": "nominal", "title": "Crime Type" },
-            { "field": "Cases", "type": "quantitative", "title": "Cases (per 100,000 people)" }
-          ]
-        }
-      },
-      {
-        "encoding": {
-          "x": { "type": "ordinal", "field": "Year" },
-          "y": { "value": 0 }
-        },
-        "layer": [
-          {
-            "mark": { "type": "text", "style": "label" },
-            "encoding": {
-              "text": { "aggregate": "max", "field": "Cases" },
-              "color": { "value": "gray" }
-            }
-          },
-          {
-            "mark": { "type": "tick", "style": "tick", "size": 8, "color": "#ccc" }
-          }
-        ]
-      }
-    ],
-    "config": {
-      "axisX": { 
-        "domain": false, 
-        "labelAngle": 0, 
-        "tickColor": "#ccc", 
-        "title": null,
-        "labelColor": "lightgray"},
-      "view": { "stroke": null },
-      "style": {
-        "label": { "baseline": "middle", "align": "right", "dx": -5 },
-        "tick": { "orient": "horizontal" },
-      },
-      "legend": {
-        "labelColor": "white",  
-        "titleColor": "white"  
-      }
-    }
-  };
-
-  // Embed the crime chart in the div with id="crime-chart"
-  vegaEmbed("#crime-chart", crimeChart, { mode: "vega-lite" }).then(console.log).catch(console.warn);
+  // Load the stream graph from the GitHub link you provided
+  vegaEmbed("#stream-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/stream.json", { mode: "vega-lite" })
+    .then(console.log)
+    .catch(console.warn);
 </script>
-<br>
-<br>
-<br>
-<br>
 
-<div class = "text-content">
-  <p>
-    Overall, the data shows a clear decline in violent crimes across Malaysia from 2000 to 2022. Attempted murder and
-    robbery (with and without firearms) have decreased significantly, reaching near-zero levels by 2010. While rape and
-    bodily injuries peaked around 2010, they have since dropped by 2022. This overall downward trend reflects the likely
-    success of law enforcement, public safety initiatives, and social interventions in reducing crime rates.
-    </p>
+<br><br><br>
+
 </body>
 
 </html>
