@@ -1,433 +1,145 @@
 state,date,sex,age,ethnicity,population
 Johor,2014-01-01,both,overall,overall,3559.8
-Johor,2014-01-01,female,overall,overall,1676.4
-Johor,2014-01-01,male,overall,overall,1883.4
 Johor,2015-01-01,both,overall,overall,3610.3
-Johor,2015-01-01,female,overall,overall,1700.5
-Johor,2015-01-01,male,overall,overall,1909.8
 Johor,2016-01-01,both,overall,overall,3651.8
-Johor,2016-01-01,female,overall,overall,1720.7
-Johor,2016-01-01,male,overall,overall,1931.1
 Johor,2017-01-01,both,overall,overall,3697.0
-Johor,2017-01-01,female,overall,overall,1744.5
-Johor,2017-01-01,male,overall,overall,1952.6
 Johor,2018-01-01,both,overall,overall,3749.4
-Johor,2018-01-01,female,overall,overall,1773.0
-Johor,2018-01-01,male,overall,overall,1976.4
 Johor,2019-01-01,both,overall,overall,3761.2
-Johor,2019-01-01,female,overall,overall,1786.6
-Johor,2019-01-01,male,overall,overall,1974.6
 Johor,2020-01-01,both,overall,overall,4009.7
-Johor,2020-01-01,female,overall,overall,1868.4
-Johor,2020-01-01,male,overall,overall,2141.3
 Johor,2021-01-01,both,overall,overall,4020.0
-Johor,2021-01-01,female,overall,overall,1881.1
-Johor,2021-01-01,male,overall,overall,2138.8
 Johor,2022-01-01,both,overall,overall,4028.3
-Johor,2022-01-01,female,overall,overall,1890.0
-Johor,2022-01-01,male,overall,overall,2138.2
 Kedah,2014-01-01,both,overall,overall,2062.7
-Kedah,2014-01-01,female,overall,overall,1016.4
-Kedah,2014-01-01,male,overall,overall,1046.4
 Kedah,2015-01-01,both,overall,overall,2096.5
-Kedah,2015-01-01,female,overall,overall,1033.4
-Kedah,2015-01-01,male,overall,overall,1063.1
 Kedah,2016-01-01,both,overall,overall,2119.7
-Kedah,2016-01-01,female,overall,overall,1044.1
-Kedah,2016-01-01,male,overall,overall,1075.6
 Kedah,2017-01-01,both,overall,overall,2143.9
-Kedah,2017-01-01,female,overall,overall,1055.2
-Kedah,2017-01-01,male,overall,overall,1088.7
 Kedah,2018-01-01,both,overall,overall,2163.0
-Kedah,2018-01-01,female,overall,overall,1065.1
-Kedah,2018-01-01,male,overall,overall,1097.8
 Kedah,2019-01-01,both,overall,overall,2173.7
-Kedah,2019-01-01,female,overall,overall,1072.3
-Kedah,2019-01-01,male,overall,overall,1101.5
 Kedah,2020-01-01,both,overall,overall,2131.4
-Kedah,2020-01-01,female,overall,overall,1044.1
-Kedah,2020-01-01,male,overall,overall,1087.3
 Kedah,2021-01-01,both,overall,overall,2151.7
-Kedah,2021-01-01,female,overall,overall,1055.9
-Kedah,2021-01-01,male,overall,overall,1095.8
 Kedah,2022-01-01,both,overall,overall,2163.1
-Kedah,2022-01-01,female,overall,overall,1061.9
-Kedah,2022-01-01,male,overall,overall,1101.2
 Kelantan,2014-01-01,both,overall,overall,1723.4
-Kelantan,2014-01-01,female,overall,overall,854.9
-Kelantan,2014-01-01,male,overall,overall,868.6
 Kelantan,2015-01-01,both,overall,overall,1760.6
-Kelantan,2015-01-01,female,overall,overall,873.0
-Kelantan,2015-01-01,male,overall,overall,887.6
 Kelantan,2016-01-01,both,overall,overall,1796.7
-Kelantan,2016-01-01,female,overall,overall,890.1
-Kelantan,2016-01-01,male,overall,overall,906.7
 Kelantan,2017-01-01,both,overall,overall,1829.0
-Kelantan,2017-01-01,female,overall,overall,905.8
-Kelantan,2017-01-01,male,overall,overall,923.2
 Kelantan,2018-01-01,both,overall,overall,1860.5
-Kelantan,2018-01-01,female,overall,overall,920.6
-Kelantan,2018-01-01,male,overall,overall,939.9
 Kelantan,2019-01-01,both,overall,overall,1883.8
-Kelantan,2019-01-01,female,overall,overall,931.7
-Kelantan,2019-01-01,male,overall,overall,952.1
 Kelantan,2020-01-01,both,overall,overall,1792.5
-Kelantan,2020-01-01,female,overall,overall,892.4
-Kelantan,2020-01-01,male,overall,overall,900.1
 Kelantan,2021-01-01,both,overall,overall,1812.3
-Kelantan,2021-01-01,female,overall,overall,902.6
-Kelantan,2021-01-01,male,overall,overall,909.7
 Kelantan,2022-01-01,both,overall,overall,1830.6
-Kelantan,2022-01-01,female,overall,overall,912.0
-Kelantan,2022-01-01,male,overall,overall,918.5
 Melaka,2014-01-01,both,overall,overall,871.7
-Melaka,2014-01-01,female,overall,overall,431.8
-Melaka,2014-01-01,male,overall,overall,439.9
 Melaka,2015-01-01,both,overall,overall,889.0
-Melaka,2015-01-01,female,overall,overall,441.1
-Melaka,2015-01-01,male,overall,overall,447.9
 Melaka,2016-01-01,both,overall,overall,901.1
-Melaka,2016-01-01,female,overall,overall,447.7
-Melaka,2016-01-01,male,overall,overall,453.4
 Melaka,2017-01-01,both,overall,overall,913.1
-Melaka,2017-01-01,female,overall,overall,453.9
-Melaka,2017-01-01,male,overall,overall,459.2
 Melaka,2018-01-01,both,overall,overall,922.4
-Melaka,2018-01-01,female,overall,overall,458.9
-Melaka,2018-01-01,male,overall,overall,463.6
 Melaka,2019-01-01,both,overall,overall,928.4
-Melaka,2019-01-01,female,overall,overall,462.5
-Melaka,2019-01-01,male,overall,overall,465.9
 Melaka,2020-01-01,both,overall,overall,998.4
-Melaka,2020-01-01,female,overall,overall,473.5
-Melaka,2020-01-01,male,overall,overall,524.9
 Melaka,2021-01-01,both,overall,overall,1004.5
-Melaka,2021-01-01,female,overall,overall,477.1
-Melaka,2021-01-01,male,overall,overall,527.4
 Melaka,2022-01-01,both,overall,overall,1008.6
-Melaka,2022-01-01,female,overall,overall,479.8
-Melaka,2022-01-01,male,overall,overall,528.8
 Negeri Sembilan,2014-01-01,both,overall,overall,1079.6
-Negeri Sembilan,2014-01-01,female,overall,overall,520.2
-Negeri Sembilan,2014-01-01,male,overall,overall,559.4
 Negeri Sembilan,2015-01-01,both,overall,overall,1088.8
-Negeri Sembilan,2015-01-01,female,overall,overall,525.1
-Negeri Sembilan,2015-01-01,male,overall,overall,563.7
 Negeri Sembilan,2016-01-01,both,overall,overall,1099.3
-Negeri Sembilan,2016-01-01,female,overall,overall,530.2
-Negeri Sembilan,2016-01-01,male,overall,overall,569.1
 Negeri Sembilan,2017-01-01,both,overall,overall,1114.0
-Negeri Sembilan,2017-01-01,female,overall,overall,537.1
-Negeri Sembilan,2017-01-01,male,overall,overall,576.8
 Negeri Sembilan,2018-01-01,both,overall,overall,1122.9
-Negeri Sembilan,2018-01-01,female,overall,overall,542.1
-Negeri Sembilan,2018-01-01,male,overall,overall,580.8
 Negeri Sembilan,2019-01-01,both,overall,overall,1126.2
-Negeri Sembilan,2019-01-01,female,overall,overall,545.6
-Negeri Sembilan,2019-01-01,male,overall,overall,580.6
 Negeri Sembilan,2020-01-01,both,overall,overall,1200.0
-Negeri Sembilan,2020-01-01,female,overall,overall,576.0
-Negeri Sembilan,2020-01-01,male,overall,overall,624.0
 Negeri Sembilan,2021-01-01,both,overall,overall,1204.2
-Negeri Sembilan,2021-01-01,female,overall,overall,579.9
-Negeri Sembilan,2021-01-01,male,overall,overall,624.2
 Negeri Sembilan,2022-01-01,both,overall,overall,1207.9
-Negeri Sembilan,2022-01-01,female,overall,overall,582.7
-Negeri Sembilan,2022-01-01,male,overall,overall,625.1
 Pahang,2014-01-01,both,overall,overall,1591.7
-Pahang,2014-01-01,female,overall,overall,741.9
-Pahang,2014-01-01,male,overall,overall,849.8
 Pahang,2015-01-01,both,overall,overall,1607.9
-Pahang,2015-01-01,female,overall,overall,749.7
-Pahang,2015-01-01,male,overall,overall,858.2
 Pahang,2016-01-01,both,overall,overall,1626.7
-Pahang,2016-01-01,female,overall,overall,759.4
-Pahang,2016-01-01,male,overall,overall,867.3
 Pahang,2017-01-01,both,overall,overall,1647.0
-Pahang,2017-01-01,female,overall,overall,768.9
-Pahang,2017-01-01,male,overall,overall,878.2
 Pahang,2018-01-01,both,overall,overall,1664.7
-Pahang,2018-01-01,female,overall,overall,778.0
-Pahang,2018-01-01,male,overall,overall,886.8
 Pahang,2019-01-01,both,overall,overall,1671.4
-Pahang,2019-01-01,female,overall,overall,784.6
-Pahang,2019-01-01,male,overall,overall,886.9
 Pahang,2020-01-01,both,overall,overall,1591.3
-Pahang,2020-01-01,female,overall,overall,747.1
-Pahang,2020-01-01,male,overall,overall,844.2
 Pahang,2021-01-01,both,overall,overall,1601.5
-Pahang,2021-01-01,female,overall,overall,754.4
-Pahang,2021-01-01,male,overall,overall,847.0
 Pahang,2022-01-01,both,overall,overall,1614.3
-Pahang,2022-01-01,female,overall,overall,761.2
-Pahang,2022-01-01,male,overall,overall,853.0
 Perak,2014-01-01,both,overall,overall,2458.8
-Perak,2014-01-01,female,overall,overall,1213.6
-Perak,2014-01-01,male,overall,overall,1245.2
 Perak,2015-01-01,both,overall,overall,2466.9
-Perak,2015-01-01,female,overall,overall,1217.6
-Perak,2015-01-01,male,overall,overall,1249.3
 Perak,2016-01-01,both,overall,overall,2482.1
-Perak,2016-01-01,female,overall,overall,1225.2
-Perak,2016-01-01,male,overall,overall,1257.0
 Perak,2017-01-01,both,overall,overall,2493.2
-Perak,2017-01-01,female,overall,overall,1230.3
-Perak,2017-01-01,male,overall,overall,1262.9
 Perak,2018-01-01,both,overall,overall,2503.5
-Perak,2018-01-01,female,overall,overall,1236.7
-Perak,2018-01-01,male,overall,overall,1266.7
 Perak,2019-01-01,both,overall,overall,2508.8
-Perak,2019-01-01,female,overall,overall,1240.6
-Perak,2019-01-01,male,overall,overall,1268.2
 Perak,2020-01-01,both,overall,overall,2496.0
-Perak,2020-01-01,female,overall,overall,1195.8
-Perak,2020-01-01,male,overall,overall,1300.2
 Perak,2021-01-01,both,overall,overall,2515.8
-Perak,2021-01-01,female,overall,overall,1206.8
-Perak,2021-01-01,male,overall,overall,1309.0
 Perak,2022-01-01,both,overall,overall,2514.4
-Perak,2022-01-01,female,overall,overall,1209.9
-Perak,2022-01-01,male,overall,overall,1304.6
 Perlis,2014-01-01,both,overall,overall,245.1
-Perlis,2014-01-01,female,overall,overall,123.0
-Perlis,2014-01-01,male,overall,overall,122.1
 Perlis,2015-01-01,both,overall,overall,248.5
-Perlis,2015-01-01,female,overall,overall,124.7
-Perlis,2015-01-01,male,overall,overall,123.8
 Perlis,2016-01-01,both,overall,overall,251.0
-Perlis,2016-01-01,female,overall,overall,125.7
-Perlis,2016-01-01,male,overall,overall,125.3
 Perlis,2017-01-01,both,overall,overall,252.0
-Perlis,2017-01-01,female,overall,overall,126.3
-Perlis,2017-01-01,male,overall,overall,125.7
 Perlis,2018-01-01,both,overall,overall,253.5
-Perlis,2018-01-01,female,overall,overall,127.2
-Perlis,2018-01-01,male,overall,overall,126.3
 Perlis,2019-01-01,both,overall,overall,254.0
-Perlis,2019-01-01,female,overall,overall,127.6
-Perlis,2019-01-01,male,overall,overall,126.5
 Perlis,2020-01-01,both,overall,overall,284.9
-Perlis,2020-01-01,female,overall,overall,142.5
-Perlis,2020-01-01,male,overall,overall,142.3
 Perlis,2021-01-01,both,overall,overall,287.6
-Perlis,2021-01-01,female,overall,overall,144.0
-Perlis,2021-01-01,male,overall,overall,143.6
 Perlis,2022-01-01,both,overall,overall,289.8
-Perlis,2022-01-01,female,overall,overall,145.2
-Perlis,2022-01-01,male,overall,overall,144.6
 Pulau Pinang,2014-01-01,both,overall,overall,1678.1
-Pulau Pinang,2014-01-01,female,overall,overall,832.8
-Pulau Pinang,2014-01-01,male,overall,overall,845.3
 Pulau Pinang,2015-01-01,both,overall,overall,1698.1
-Pulau Pinang,2015-01-01,female,overall,overall,842.9
-Pulau Pinang,2015-01-01,male,overall,overall,855.2
 Pulau Pinang,2016-01-01,both,overall,overall,1717.7
-Pulau Pinang,2016-01-01,female,overall,overall,853.0
-Pulau Pinang,2016-01-01,male,overall,overall,864.6
 Pulau Pinang,2017-01-01,both,overall,overall,1744.1
-Pulau Pinang,2017-01-01,female,overall,overall,867.0
-Pulau Pinang,2017-01-01,male,overall,overall,877.1
 Pulau Pinang,2018-01-01,both,overall,overall,1762.8
-Pulau Pinang,2018-01-01,female,overall,overall,876.3
-Pulau Pinang,2018-01-01,male,overall,overall,886.5
 Pulau Pinang,2019-01-01,both,overall,overall,1768.8
-Pulau Pinang,2019-01-01,female,overall,overall,879.7
-Pulau Pinang,2019-01-01,male,overall,overall,889.1
 Pulau Pinang,2020-01-01,both,overall,overall,1740.4
-Pulau Pinang,2020-01-01,female,overall,overall,847.9
-Pulau Pinang,2020-01-01,male,overall,overall,892.6
 Pulau Pinang,2021-01-01,both,overall,overall,1740.0
-Pulau Pinang,2021-01-01,female,overall,overall,848.6
-Pulau Pinang,2021-01-01,male,overall,overall,891.4
 Pulau Pinang,2022-01-01,both,overall,overall,1740.9
-Pulau Pinang,2022-01-01,female,overall,overall,849.9
-Pulau Pinang,2022-01-01,male,overall,overall,891.0
 Sabah,2014-01-01,both,overall,overall,3669.9
-Sabah,2014-01-01,female,overall,overall,1748.2
-Sabah,2014-01-01,male,overall,overall,1921.8
 Sabah,2015-01-01,both,overall,overall,3720.5
-Sabah,2015-01-01,female,overall,overall,1778.2
-Sabah,2015-01-01,male,overall,overall,1942.3
 Sabah,2016-01-01,both,overall,overall,3802.8
-Sabah,2016-01-01,female,overall,overall,1816.2
-Sabah,2016-01-01,male,overall,overall,1986.6
 Sabah,2017-01-01,both,overall,overall,3855.9
-Sabah,2017-01-01,female,overall,overall,1842.1
-Sabah,2017-01-01,male,overall,overall,2013.8
 Sabah,2018-01-01,both,overall,overall,3898.4
-Sabah,2018-01-01,female,overall,overall,1862.8
-Sabah,2018-01-01,male,overall,overall,2035.6
 Sabah,2019-01-01,both,overall,overall,3904.4
-Sabah,2019-01-01,female,overall,overall,1867.2
-Sabah,2019-01-01,male,overall,overall,2037.2
 Sabah,2020-01-01,both,overall,overall,3418.8
-Sabah,2020-01-01,female,overall,overall,1639.0
-Sabah,2020-01-01,male,overall,overall,1779.8
 Sabah,2021-01-01,both,overall,overall,3412.6
-Sabah,2021-01-01,female,overall,overall,1633.1
-Sabah,2021-01-01,male,overall,overall,1779.5
 Sabah,2022-01-01,both,overall,overall,3414.9
-Sabah,2022-01-01,female,overall,overall,1635.9
-Sabah,2022-01-01,male,overall,overall,1779.1
 Sarawak,2014-01-01,both,overall,overall,2664.0
-Sarawak,2014-01-01,female,overall,overall,1277.0
-Sarawak,2014-01-01,male,overall,overall,1386.9
 Sarawak,2015-01-01,both,overall,overall,2701.5
-Sarawak,2015-01-01,female,overall,overall,1294.1
-Sarawak,2015-01-01,male,overall,overall,1407.4
 Sarawak,2016-01-01,both,overall,overall,2738.7
-Sarawak,2016-01-01,female,overall,overall,1310.8
-Sarawak,2016-01-01,male,overall,overall,1427.9
 Sarawak,2017-01-01,both,overall,overall,2766.3
-Sarawak,2017-01-01,female,overall,overall,1324.0
-Sarawak,2017-01-01,male,overall,overall,1442.3
 Sarawak,2018-01-01,both,overall,overall,2791.7
-Sarawak,2018-01-01,female,overall,overall,1336.5
-Sarawak,2018-01-01,male,overall,overall,1455.1
 Sarawak,2019-01-01,both,overall,overall,2806.0
-Sarawak,2019-01-01,female,overall,overall,1345.7
-Sarawak,2019-01-01,male,overall,overall,1460.3
 Sarawak,2020-01-01,both,overall,overall,2453.7
-Sarawak,2020-01-01,female,overall,overall,1184.1
-Sarawak,2020-01-01,male,overall,overall,1269.6
 Sarawak,2021-01-01,both,overall,overall,2465.6
-Sarawak,2021-01-01,female,overall,overall,1192.0
-Sarawak,2021-01-01,male,overall,overall,1273.6
 Sarawak,2022-01-01,both,overall,overall,2473.5
-Sarawak,2022-01-01,female,overall,overall,1197.4
-Sarawak,2022-01-01,male,overall,overall,1276.1
 Selangor,2014-01-01,both,overall,overall,6051.3
-Selangor,2014-01-01,female,overall,overall,2903.7
-Selangor,2014-01-01,male,overall,overall,3147.6
 Selangor,2015-01-01,both,overall,overall,6178.0
-Selangor,2015-01-01,female,overall,overall,2965.5
-Selangor,2015-01-01,male,overall,overall,3212.5
 Selangor,2016-01-01,both,overall,overall,6291.5
-Selangor,2016-01-01,female,overall,overall,3019.9
-Selangor,2016-01-01,male,overall,overall,3271.6
 Selangor,2017-01-01,both,overall,overall,6380.7
-Selangor,2017-01-01,female,overall,overall,3064.5
-Selangor,2017-01-01,male,overall,overall,3316.2
 Selangor,2018-01-01,both,overall,overall,6475.0
-Selangor,2018-01-01,female,overall,overall,3110.1
-Selangor,2018-01-01,male,overall,overall,3365.0
 Selangor,2019-01-01,both,overall,overall,6506.1
-Selangor,2019-01-01,female,overall,overall,3131.0
-Selangor,2019-01-01,male,overall,overall,3375.1
 Selangor,2020-01-01,both,overall,overall,6994.4
-Selangor,2020-01-01,female,overall,overall,3283.7
-Selangor,2020-01-01,male,overall,overall,3710.8
 Selangor,2021-01-01,both,overall,overall,7014.7
-Selangor,2021-01-01,female,overall,overall,3304.7
-Selangor,2021-01-01,male,overall,overall,3710.0
 Selangor,2022-01-01,both,overall,overall,7050.3
-Selangor,2022-01-01,female,overall,overall,3326.0
-Selangor,2022-01-01,male,overall,overall,3724.3
 Terengganu,2014-01-01,both,overall,overall,1140.4
-Terengganu,2014-01-01,female,overall,overall,558.0
-Terengganu,2014-01-01,male,overall,overall,582.4
 Terengganu,2015-01-01,both,overall,overall,1161.0
-Terengganu,2015-01-01,female,overall,overall,569.4
-Terengganu,2015-01-01,male,overall,overall,591.6
 Terengganu,2016-01-01,both,overall,overall,1183.4
-Terengganu,2016-01-01,female,overall,overall,580.0
-Terengganu,2016-01-01,male,overall,overall,603.4
 Terengganu,2017-01-01,both,overall,overall,1208.0
-Terengganu,2017-01-01,female,overall,overall,591.6
-Terengganu,2017-01-01,male,overall,overall,616.4
 Terengganu,2018-01-01,both,overall,overall,1228.3
-Terengganu,2018-01-01,female,overall,overall,602.2
-Terengganu,2018-01-01,male,overall,overall,626.1
 Terengganu,2019-01-01,both,overall,overall,1244.5
-Terengganu,2019-01-01,female,overall,overall,611.3
-Terengganu,2019-01-01,male,overall,overall,633.2
 Terengganu,2020-01-01,both,overall,overall,1149.4
-Terengganu,2020-01-01,female,overall,overall,561.6
-Terengganu,2020-01-01,male,overall,overall,587.9
 Terengganu,2021-01-01,both,overall,overall,1170.7
-Terengganu,2021-01-01,female,overall,overall,571.5
-Terengganu,2021-01-01,male,overall,overall,599.1
 Terengganu,2022-01-01,both,overall,overall,1186.6
-Terengganu,2022-01-01,female,overall,overall,579.5
-Terengganu,2022-01-01,male,overall,overall,607.1
 W.P. Kuala Lumpur,2014-01-01,both,overall,overall,1737.4
-W.P. Kuala Lumpur,2014-01-01,female,overall,overall,853.3
-W.P. Kuala Lumpur,2014-01-01,male,overall,overall,884.1
 W.P. Kuala Lumpur,2015-01-01,both,overall,overall,1780.4
-W.P. Kuala Lumpur,2015-01-01,female,overall,overall,867.4
-W.P. Kuala Lumpur,2015-01-01,male,overall,overall,913.0
 W.P. Kuala Lumpur,2016-01-01,both,overall,overall,1789.7
-W.P. Kuala Lumpur,2016-01-01,female,overall,overall,871.4
-W.P. Kuala Lumpur,2016-01-01,male,overall,overall,918.3
 W.P. Kuala Lumpur,2017-01-01,both,overall,overall,1793.2
-W.P. Kuala Lumpur,2017-01-01,female,overall,overall,873.8
-W.P. Kuala Lumpur,2017-01-01,male,overall,overall,919.4
 W.P. Kuala Lumpur,2018-01-01,both,overall,overall,1790.0
-W.P. Kuala Lumpur,2018-01-01,female,overall,overall,870.7
-W.P. Kuala Lumpur,2018-01-01,male,overall,overall,919.4
 W.P. Kuala Lumpur,2019-01-01,both,overall,overall,1782.5
-W.P. Kuala Lumpur,2019-01-01,female,overall,overall,867.3
-W.P. Kuala Lumpur,2019-01-01,male,overall,overall,915.2
 W.P. Kuala Lumpur,2020-01-01,both,overall,overall,1982.1
-W.P. Kuala Lumpur,2020-01-01,female,overall,overall,923.2
-W.P. Kuala Lumpur,2020-01-01,male,overall,overall,1058.9
 W.P. Kuala Lumpur,2021-01-01,both,overall,overall,1964.0
-W.P. Kuala Lumpur,2021-01-01,female,overall,overall,918.8
-W.P. Kuala Lumpur,2021-01-01,male,overall,overall,1045.2
 W.P. Kuala Lumpur,2022-01-01,both,overall,overall,1961.2
-W.P. Kuala Lumpur,2022-01-01,female,overall,overall,920.3
-W.P. Kuala Lumpur,2022-01-01,male,overall,overall,1040.8
 W.P. Labuan,2014-01-01,both,overall,overall,93.8
-W.P. Labuan,2014-01-01,female,overall,overall,46.4
-W.P. Labuan,2014-01-01,male,overall,overall,47.4
 W.P. Labuan,2015-01-01,both,overall,overall,95.1
-W.P. Labuan,2015-01-01,female,overall,overall,47.0
-W.P. Labuan,2015-01-01,male,overall,overall,48.1
 W.P. Labuan,2016-01-01,both,overall,overall,96.8
-W.P. Labuan,2016-01-01,female,overall,overall,47.9
-W.P. Labuan,2016-01-01,male,overall,overall,48.9
 W.P. Labuan,2017-01-01,both,overall,overall,97.6
-W.P. Labuan,2017-01-01,female,overall,overall,48.3
-W.P. Labuan,2017-01-01,male,overall,overall,49.2
 W.P. Labuan,2018-01-01,both,overall,overall,99.0
-W.P. Labuan,2018-01-01,female,overall,overall,49.1
-W.P. Labuan,2018-01-01,male,overall,overall,49.9
 W.P. Labuan,2019-01-01,both,overall,overall,99.3
-W.P. Labuan,2019-01-01,female,overall,overall,49.3
-W.P. Labuan,2019-01-01,male,overall,overall,50.0
 W.P. Labuan,2020-01-01,both,overall,overall,95.1
-W.P. Labuan,2020-01-01,female,overall,overall,46.2
-W.P. Labuan,2020-01-01,male,overall,overall,48.9
 W.P. Labuan,2021-01-01,both,overall,overall,96.0
-W.P. Labuan,2021-01-01,female,overall,overall,46.6
-W.P. Labuan,2021-01-01,male,overall,overall,49.4
 W.P. Labuan,2022-01-01,both,overall,overall,96.9
-W.P. Labuan,2022-01-01,female,overall,overall,47.0
-W.P. Labuan,2022-01-01,male,overall,overall,49.8
 W.P. Putrajaya,2014-01-01,both,overall,overall,80.9
-W.P. Putrajaya,2014-01-01,female,overall,overall,43.3
-W.P. Putrajaya,2014-01-01,male,overall,overall,37.6
 W.P. Putrajaya,2015-01-01,both,overall,overall,83.0
-W.P. Putrajaya,2015-01-01,female,overall,overall,44.5
-W.P. Putrajaya,2015-01-01,male,overall,overall,38.5
 W.P. Putrajaya,2016-01-01,both,overall,overall,84.4
-W.P. Putrajaya,2016-01-01,female,overall,overall,45.0
-W.P. Putrajaya,2016-01-01,male,overall,overall,39.5
 W.P. Putrajaya,2017-01-01,both,overall,overall,87.5
-W.P. Putrajaya,2017-01-01,female,overall,overall,46.5
-W.P. Putrajaya,2017-01-01,male,overall,overall,41.0
 W.P. Putrajaya,2018-01-01,both,overall,overall,97.2
-W.P. Putrajaya,2018-01-01,female,overall,overall,51.5
-W.P. Putrajaya,2018-01-01,male,overall,overall,45.6
 W.P. Putrajaya,2019-01-01,both,overall,overall,103.7
-W.P. Putrajaya,2019-01-01,female,overall,overall,55.1
-W.P. Putrajaya,2019-01-01,male,overall,overall,48.6
 W.P. Putrajaya,2020-01-01,both,overall,overall,109.2
-W.P. Putrajaya,2020-01-01,female,overall,overall,55.6
-W.P. Putrajaya,2020-01-01,male,overall,overall,53.6
 W.P. Putrajaya,2021-01-01,both,overall,overall,115.2
-W.P. Putrajaya,2021-01-01,female,overall,overall,58.5
-W.P. Putrajaya,2021-01-01,male,overall,overall,56.7
 W.P. Putrajaya,2022-01-01,both,overall,overall,117.0
-W.P. Putrajaya,2022-01-01,female,overall,overall,59.4
-W.P. Putrajaya,2022-01-01,male,overall,overall,57.6
