@@ -145,16 +145,6 @@
       font-size: large;
     }
 
-    #annotations a {
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    #annotations a:hover {
-      color: #ff6347;
-      text-decoration: underline;
-    }
   </style>
   <title>Crime Rates in Malaysia</title>
 </head>
@@ -258,7 +248,6 @@
 
   <br>
 
-  <!-- Clickable annotations for stream chart -->
   <div class="text-content">
     <p>
       This stream graph tracks intentional homicide rates by state from 2014 to 2022, and paints a more detailed picture
@@ -313,32 +302,27 @@
   <br>
   <br>
 
-  <div id="text-content">
-    <p>
-      <span style="color: lightgray">Click below to view notable changes!</span>
-    </p>
-  </div>
 
   <!-- Clickable annotations below the chart -->
   <div class="translucent-overlay">
-    <div id="annotations">
+    <div class="text-content">
       <p>
-        <a onclick="changeYear(2017, 'Melaka')">2017 - <span style="color:orange; font-size: 1.2em;">Melaka</span> had
-          the highest index.</a> <br>
-        <a onclick="changeYear(2018, 'Kelantan')">2018 - <span style="color:orange; font-size: 1.2em;">Kelantan</span>
-          remained stable, but Melaka dropped out of the top 5.</a> <br>
-        <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 -Selangor/Kuala Lumpur <strong>peaked</strong>
-          significantly, indicating a concerning rise in crime rates.</a> <br>
-        <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a <span
+        2017 - <span style="color:orange; font-size: 1.2em;">Melaka</span> had
+          the highest index. <br><br>
+        2018 - <span style="color:orange; font-size: 1.2em;">Kelantan</span>
+          remained stable, but Melaka dropped out of the top 5. <br><br>
+        2019 -Selangor/Kuala Lumpur <strong>peaked</strong>
+          significantly, indicating a concerning rise in crime rates. <br><br>
+        2020 - Selangor/KL saw a <span
             style="color:orange; font-weight:bold;">sharp decline</span> in prisoners, possibly due to pandemic
           restrictions and
-          lockdowns.</a> <br>
-        <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor <strong>decreased slightly</strong>, possibly as a
+          lockdowns. <br><br>
+        2021 - Crime in Johor <strong>decreased slightly</strong>, possibly as a
           result
-          of local interventions or social programs.</a> <br>
-        <a onclick="changeYear(2022, 'Melaka')">2022 - <span style="color:orange; font-size: 1.2em;">Melaka</span> rose
+          of local interventions or social programs.<br><br>
+        2022 - <span style="color:orange; font-size: 1.2em;">Melaka</span> rose
           back to
-          the top, suggesting a resurgence in crime-related activities in this state.</a>
+          the top, suggesting a resurgence in crime-related activities in this state.
       </p>
     </div>
   </div>
@@ -367,13 +351,7 @@
   </ul>
   <br>
   <br>
-  <div id="text-content">
-    <p>
-      <span style="color: gray">Clickable annotations were created with the help of ChatGPT</span>
-    </p>
-    <br>
-    <br>
-  </div>
+ 
 
 
 </body>
