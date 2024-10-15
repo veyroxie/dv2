@@ -2,10 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 650,
   "height": 400,
-  "background": null,
+  "background": null,  // Transparent background
   "data": {
     "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/top%205%20prisoner%20indexes%20per%20100%2C000.csv",
-    "format": { "type": "csv" }
+    "format": {"type": "csv"}
   },
   "params": [
     {
@@ -18,11 +18,13 @@
       }
     },
     {
-      "name": "selectedState",
+      "name": "selectedState",  // This will store the specific state to highlight
       "value": null
-    }
+    },
   ],
-  "transform": [{ "filter": "datum.Year == selectedYear" }],
+  "transform": [
+    {"filter": "datum.Year == selectedYear"}
+  ],
   "encoding": {
     "y": {
       "field": "State",
@@ -31,7 +33,7 @@
         "title": "State",
         "labelFontSize": 14,
         "titleFontSize": 16,
-        "labelColor": "white",
+        "labelColor": "white",  // White axis labels
         "titleColor": "white"
       },
       "sort": "-x"
@@ -43,7 +45,7 @@
         "title": "Prisoner Index (per 100,000)",
         "labelFontSize": 14,
         "titleFontSize": 16,
-        "labelColor": "white",
+        "labelColor": "white",  // White axis labels
         "titleColor": "white"
       }
     }
@@ -53,41 +55,77 @@
       "selection": {
         "highlight": {
           "type": "single",
-          "on": "mouseover",
+          "on": "mouseover", 
           "empty": "none"
         }
       },
       "mark": {
         "type": "circle",
-        "size": 1000,
+        "size": 1000,  // Increased circle size for better visibility
         "tooltip": true
       },
       "encoding": {
         "color": {
           "condition": [
-            { "test": "datum.State == selectedState", "value": "blue" },
-            { "selection": "highlight", "value": "lightblue" }
+            {
+              "test": "datum.State == selectedState",  // Highlight selected state
+              "value": "blue"
+            },
+            {
+              "selection": "highlight",
+              "value": "red"
+            }
           ],
-          "value": "orange"
-        },
+          "value": "orange"  // Default color
+        }
+        ,
         "tooltip": [
-          { "field": "State", "type": "nominal" },
-          { "field": "Value", "type": "quantitative", "title": "Prisoner Index" }
+          {"field": "State", "type": "nominal"},
+          {"field": "Value", "type": "quantitative", "title": "Prisoner Index"}
         ]
       }
     },
     {
-      "mark": { "type": "rule", "color": "gray", "size": 5 },
+      "mark": {"type": "rule", "color": "gray", "size": 5},
       "encoding": {
-        "y": { "field": "State", "type": "nominal" },
-        "x": { "field": "Value", "type": "quantitative" }
+        "y": {"field": "State", "type": "nominal"},
+        "x": {"field": "Value", "type": "quantitative"}
       }
     }
   ],
   "config": {
     "axis": {
-      "grid": false,
-      "domainColor": "white"
+      "grid": false,  // Removed gridlines
+      "domainColor": "white"  // White axis lines for better contrast
     }
-  }
+  },
+  "annotations": {
+    "color": "white",
+    "values": [
+      {"Year": 2017, "State": "Melaka", "Text": "2017 - Melaka had the highest index."},
+      {"Year": 2018, "State": "Kelantan", "Text": "2018 - Kelantan remained stable."},
+      {"Year": 2019, "State": "Selangor/Kuala Lumpur", "Text": "2019 - Selangor/KL peaked."},
+      {"Year": 2020, "State": "Selangor/Kuala Lumpur", "Text": "2020 - Selangor/KL saw a sharp decline."},
+      {"Year": 2021, "State": "Johor", "Text": "2021 - Johor had the lowest index."},
+      {"Year": 2022, "State": "Melaka", "Text": "2022 - Melaka rebounded."}
+    ]
+  },
+  "marks": [
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "href": {
+            "scale": {"domain": ["2017", "2018", "2019", "2020", "2021", "2022"]},
+            "field": "Year"
+          },
+          "color": {"value": "red"},
+          "text": {"value": "Click for Annotation"}
+        },
+        "update": {
+          "state": {"value": "selectedState", "Year": "value"}
+        }
+      }
+    }
+  ]
 }
