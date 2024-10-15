@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 400,
+  "background": null,
+  "data": {
+    "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/top%205%20prisoner%20indexes%20per%20100%2C000.csv",
+    "format": { "type": "csv" }
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2017,
+      "bind": {
+        "input": "select",
+        "options": [2017, 2018, 2019, 2020, 2021, 2022],
+        "name": "Select Year: "
+      }
+    },
+    {
+      "name": "selectedState",
+      "value": null
+    }
+  ],
+  "transform": [{ "filter": "datum.Year == selectedYear" }],
+  "encoding": {
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "axis": {
+        "title": "State",
+        "labelFontSize": 14,
+        "titleFontSize": 16,
+        "labelColor": "white",
+        "titleColor": "white"
+      },
+      "sort": "-x"
+    },
+    "x": {
+      "field": "Value",
+      "type": "quantitative",
+      "axis": {
+        "title": "Prisoner Index (per 100,000)",
+        "labelFontSize": 14,
+        "titleFontSize": 16,
+        "labelColor": "white",
+        "titleColor": "white"
+      }
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "highlight": {
+          "type": "single",
+          "on": "mouseover",
+          "empty": "none"
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "size": 1000,
+        "tooltip": true
+      },
+      "encoding": {
+        "color": {
+          "condition": [
+            { "test": "datum.State == selectedState", "value": "blue" },
+            { "selection": "highlight", "value": "lightblue" }
+          ],
+          "value": "orange"
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal" },
+          { "field": "Value", "type": "quantitative", "title": "Prisoner Index" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "rule", "color": "gray", "size": 5 },
+      "encoding": {
+        "y": { "field": "State", "type": "nominal" },
+        "x": { "field": "Value", "type": "quantitative" }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false,
+      "domainColor": "white"
+    }
+  }
+}
