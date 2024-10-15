@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/violent%20crimes.csv",
+    "format": { "type": "csv" }
+  },
+  "width": 800,
+  "height": 300,
+  "background": null,
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#ccc" },
+      "encoding": {
+        "x": { "field": "Year", "type": "ordinal" }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "tooltip": true
+      },
+      "encoding": {
+        "color": {
+          "type": "nominal",
+          "field": "Crime Type",
+          "scale": {
+            "scheme": "dark2"
+          }
+        },
+        "detail": { "field": "Crime Type" },
+        "opacity": { "value": 0.7 },
+        "x": { "type": "ordinal", "field": "Year" },
+        "y": {
+          "type": "quantitative",
+          "field": "Cases",
+          "axis": null
+        },
+        "tooltip": [
+          { "field": "Year", "type": "ordinal", "title": "Year" },
+          { "field": "Crime Type", "type": "nominal", "title": "Crime Type" },
+          { "field": "Cases", "type": "quantitative", "title": "Cases (per 100,000 people)" }
+        ]
+      }
+    },
+    {
+      "encoding": {
+        "x": { "type": "ordinal", "field": "Year" },
+        "y": { "value": 0 }
+      },
+      "layer": [
+        {
+          "mark": { "type": "text", "style": "label" },
+          "encoding": {
+            "text": { "aggregate": "max", "field": "Cases" },
+            "color": { "value": "gray" }
+          }
+        },
+        {
+          "mark": { "type": "tick", "style": "tick", "size": 8, "color": "#ccc" }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "axisX": {
+      "domain": false,
+      "labelAngle": 0,
+      "tickColor": "#ccc",
+      "title": null,
+      "labelColor": "lightgray"
+    },
+    "view": { "stroke": null },
+    "style": {
+      "label": { "baseline": "middle", "align": "right", "dx": -5 },
+      "tick": { "orient": "horizontal" }
+    },
+    "legend": {
+      "labelColor": "white",
+      "titleColor": "white"
+    }
+  }
+}
