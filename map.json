@@ -56,6 +56,13 @@
           }
         }
       ],
+      "selection": {
+        "highlight": {
+          "type": "single",
+          "on": "mouseover",
+          "empty": "none"
+        }
+      },
       "mark": { "type": "geoshape" },
       "encoding": {
         "color": {
@@ -67,6 +74,10 @@
             "title": "Crime Rate Index",
             "labelColor": "lightgray",
             "titleColor": "lightgray"
+          },
+          "condition": {
+            "selection": "highlight",
+            "value": "yellow"  // Highlight color for country hover
           }
         },
         "tooltip": [

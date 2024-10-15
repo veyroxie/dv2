@@ -1,178 +1,70 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Streamgraph showing intentional homicide cases by state from 2014 to 2022 with color-blind friendly palette, larger and wider view.",
-  "width": 1000,  // Increased width
-  "height": 600,  // Increased height
+  "width": 1000,
+  "height": 600,
+  "background": null,
   "data": {
-    "values": [
-  {"State": "Johor", "Year": 2014, "Total Cases": 65},
-  {"State": "Johor", "Year": 2015, "Total Cases": 70},
-  {"State": "Johor", "Year": 2016, "Total Cases": 70},
-  {"State": "Johor", "Year": 2017, "Total Cases": 66},
-  {"State": "Johor", "Year": 2018, "Total Cases": 43},
-  {"State": "Johor", "Year": 2019, "Total Cases": 40},
-  {"State": "Johor", "Year": 2020, "Total Cases": 35},
-  {"State": "Johor", "Year": 2021, "Total Cases": 36},
-  {"State": "Johor", "Year": 2022, "Total Cases": 28},
-  
-  {"State": "Kedah", "Year": 2014, "Total Cases": 25},
-  {"State": "Kedah", "Year": 2015, "Total Cases": 30},
-  {"State": "Kedah", "Year": 2016, "Total Cases": 17},
-  {"State": "Kedah", "Year": 2017, "Total Cases": 21},
-  {"State": "Kedah", "Year": 2018, "Total Cases": 9},
-  {"State": "Kedah", "Year": 2019, "Total Cases": 8},
-  {"State": "Kedah", "Year": 2020, "Total Cases": 16},
-  {"State": "Kedah", "Year": 2021, "Total Cases": 11},
-  {"State": "Kedah", "Year": 2022, "Total Cases": 14},
-
-  {"State": "Selangor", "Year": 2014, "Total Cases": 110},
-  {"State": "Selangor", "Year": 2015, "Total Cases": 127},
-  {"State": "Selangor", "Year": 2016, "Total Cases": 105},
-  {"State": "Selangor", "Year": 2017, "Total Cases": 83},
-  {"State": "Selangor", "Year": 2018, "Total Cases": 91},
-  {"State": "Selangor", "Year": 2019, "Total Cases": 90},
-  {"State": "Selangor", "Year": 2020, "Total Cases": 80},
-  {"State": "Selangor", "Year": 2021, "Total Cases": 60},
-  {"State": "Selangor", "Year": 2022, "Total Cases": 60},
-
-  {"State": "Kelantan", "Year": 2014, "Total Cases": 14},
-  {"State": "Kelantan", "Year": 2015, "Total Cases": 13},
-  {"State": "Kelantan", "Year": 2016, "Total Cases": 10},
-  {"State": "Kelantan", "Year": 2017, "Total Cases": 13},
-  {"State": "Kelantan", "Year": 2018, "Total Cases": 9},
-  {"State": "Kelantan", "Year": 2019, "Total Cases": 4},
-  {"State": "Kelantan", "Year": 2020, "Total Cases": 13},
-  {"State": "Kelantan", "Year": 2021, "Total Cases": 8},
-  {"State": "Kelantan", "Year": 2022, "Total Cases": 6},
-
-  {"State": "Perak", "Year": 2014, "Total Cases": 30},
-  {"State": "Perak", "Year": 2015, "Total Cases": 45},
-  {"State": "Perak", "Year": 2016, "Total Cases": 42},
-  {"State": "Perak", "Year": 2017, "Total Cases": 35},
-  {"State": "Perak", "Year": 2018, "Total Cases": 31},
-  {"State": "Perak", "Year": 2019, "Total Cases": 29},
-  {"State": "Perak", "Year": 2020, "Total Cases": 22},
-  {"State": "Perak", "Year": 2021, "Total Cases": 27},
-  {"State": "Perak", "Year": 2022, "Total Cases": 27},
-
-  {"State": "Sarawak", "Year": 2014, "Total Cases": 45},
-  {"State": "Sarawak", "Year": 2015, "Total Cases": 35},
-  {"State": "Sarawak", "Year": 2016, "Total Cases": 27},
-  {"State": "Sarawak", "Year": 2017, "Total Cases": 27},
-  {"State": "Sarawak", "Year": 2018, "Total Cases": 28},
-  {"State": "Sarawak", "Year": 2019, "Total Cases": 25},
-  {"State": "Sarawak", "Year": 2020, "Total Cases": 8},
-  {"State": "Sarawak", "Year": 2021, "Total Cases": 25},
-  {"State": "Sarawak", "Year": 2022, "Total Cases": 22},
-
-  {"State": "Sabah", "Year": 2014, "Total Cases": 50},
-  {"State": "Sabah", "Year": 2015, "Total Cases": 35},
-  {"State": "Sabah", "Year": 2016, "Total Cases": 60},
-  {"State": "Sabah", "Year": 2017, "Total Cases": 36},
-  {"State": "Sabah", "Year": 2018, "Total Cases": 28},
-  {"State": "Sabah", "Year": 2019, "Total Cases": 26},
-  {"State": "Sabah", "Year": 2020, "Total Cases": 24},
-  {"State": "Sabah", "Year": 2021, "Total Cases": 15},
-  {"State": "Sabah", "Year": 2022, "Total Cases": 24},
-
-  {"State": "Pahang", "Year": 2014, "Total Cases": 24},
-  {"State": "Pahang", "Year": 2015, "Total Cases": 14},
-  {"State": "Pahang", "Year": 2016, "Total Cases": 15},
-  {"State": "Pahang", "Year": 2017, "Total Cases": 16},
-  {"State": "Pahang", "Year": 2018, "Total Cases": 16},
-  {"State": "Pahang", "Year": 2019, "Total Cases": 8},
-  {"State": "Pahang", "Year": 2020, "Total Cases": 8},
-  {"State": "Pahang", "Year": 2021, "Total Cases": 11},
-  {"State": "Pahang", "Year": 2022, "Total Cases": 11},
-
-  {"State": "Pulau Pinang", "Year": 2014, "Total Cases": 53},
-  {"State": "Pulau Pinang", "Year": 2015, "Total Cases": 37},
-  {"State": "Pulau Pinang", "Year": 2016, "Total Cases": 28},
-  {"State": "Pulau Pinang", "Year": 2017, "Total Cases": 17},
-  {"State": "Pulau Pinang", "Year": 2018, "Total Cases": 15},
-  {"State": "Pulau Pinang", "Year": 2019, "Total Cases": 13},
-  {"State": "Pulau Pinang", "Year": 2020, "Total Cases": 16},
-  {"State": "Pulau Pinang", "Year": 2021, "Total Cases": 13},
-  {"State": "Pulau Pinang", "Year": 2022, "Total Cases": 10},
-
-  {"State": "W.P. Kuala Lumpur", "Year": 2014, "Total Cases": 42},
-  {"State": "W.P. Kuala Lumpur", "Year": 2015, "Total Cases": 35},
-  {"State": "W.P. Kuala Lumpur", "Year": 2016, "Total Cases": 41},
-  {"State": "W.P. Kuala Lumpur", "Year": 2017, "Total Cases": 37},
-  {"State": "W.P. Kuala Lumpur", "Year": 2018, "Total Cases": 22},
-  {"State": "W.P. Kuala Lumpur", "Year": 2019, "Total Cases": 25},
-  {"State": "W.P. Kuala Lumpur", "Year": 2020, "Total Cases": 11},
-    {"State": "W.P. Kuala Lumpur", "Year": 2020, "Total Cases": 11},
-  {"State": "W.P. Kuala Lumpur", "Year": 2021, "Total Cases": 17},
-  {"State": "W.P. Kuala Lumpur", "Year": 2022, "Total Cases": 17},
-
-  {"State": "Negeri Sembilan", "Year": 2014, "Total Cases": 24},
-  {"State": "Negeri Sembilan", "Year": 2015, "Total Cases": 21},
-  {"State": "Negeri Sembilan", "Year": 2016, "Total Cases": 17},
-  {"State": "Negeri Sembilan", "Year": 2017, "Total Cases": 14},
-  {"State": "Negeri Sembilan", "Year": 2018, "Total Cases": 10},
-  {"State": "Negeri Sembilan", "Year": 2019, "Total Cases": 9},
-  {"State": "Negeri Sembilan", "Year": 2020, "Total Cases": 8},
-  {"State": "Negeri Sembilan", "Year": 2021, "Total Cases": 11},
-  {"State": "Negeri Sembilan", "Year": 2022, "Total Cases": 9},
-
-  {"State": "Melaka", "Year": 2014, "Total Cases": 10},
-  {"State": "Melaka", "Year": 2015, "Total Cases": 9},
-  {"State": "Melaka", "Year": 2016, "Total Cases": 13},
-  {"State": "Melaka", "Year": 2017, "Total Cases": 7},
-  {"State": "Melaka", "Year": 2018, "Total Cases": 5},
-  {"State": "Melaka", "Year": 2019, "Total Cases": 6},
-  {"State": "Melaka", "Year": 2020, "Total Cases": 6},
-  {"State": "Melaka", "Year": 2021, "Total Cases": 4},
-  {"State": "Melaka", "Year": 2022, "Total Cases": 5},
-
-  {"State": "Terengganu", "Year": 2014, "Total Cases": 10},
-  {"State": "Terengganu", "Year": 2015, "Total Cases": 8},
-  {"State": "Terengganu", "Year": 2016, "Total Cases": 11},
-  {"State": "Terengganu", "Year": 2017, "Total Cases": 5},
-  {"State": "Terengganu", "Year": 2018, "Total Cases": 1},
-  {"State": "Terengganu", "Year": 2019, "Total Cases": 3},
-  {"State": "Terengganu", "Year": 2020, "Total Cases": 3},
-  {"State": "Terengganu", "Year": 2021, "Total Cases": 4},
-  {"State": "Terengganu", "Year": 2022, "Total Cases": 4},
-
-  {"State": "Perlis", "Year": 2014, "Total Cases": 2},
-  {"State": "Perlis", "Year": 2015, "Total Cases": 1},
-  {"State": "Perlis", "Year": 2016, "Total Cases": 0},
-  {"State": "Perlis", "Year": 2017, "Total Cases": 2},
-  {"State": "Perlis", "Year": 2018, "Total Cases": 1},
-  {"State": "Perlis", "Year": 2019, "Total Cases": 1},
-  {"State": "Perlis", "Year": 2020, "Total Cases": 2},
-  {"State": "Perlis", "Year": 2021, "Total Cases": 2},
-  {"State": "Perlis", "Year": 2022, "Total Cases": 0}
-]
-
-
+    "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/intentional%20homicide.csv",
+    "format": {
+      "type": "csv"
+    }
   },
   "mark": {
     "type": "area",
-    "interpolate": "monotone",  // Creates smooth curves
+    "interpolate": "monotone",
     "line": true
   },
   "encoding": {
-    "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year"}},
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "title": "Year",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": false
+      }
+    },
     "y": {
       "aggregate": "sum",
       "field": "Total Cases",
-      "stack": "center",  // Enables streamgraph layout
-      "axis": {"title": "Number of Cases"}
+      "stack": "center",
+      "axis": {
+        "title": "Number of Cases",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": false
+      }
     },
     "color": {
       "field": "State",
       "type": "nominal",
-      "scale": {"scheme": "tableau10"},  // Color-blind friendly palette
-      "legend": {"title": "State"}
+      "scale": {
+        "scheme": "tableau10"
+      },
+      "legend": {
+        "title": "State",
+        "labelColor": "white",
+        "titleColor": "white"
+      }
     },
     "tooltip": [
-      {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "State", "type": "nominal", "title": "State"},
-      {"field": "Total Cases", "type": "quantitative", "title": "Total Cases"}
+      {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "State",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "Total Cases",
+        "type": "quantitative",
+        "title": "Total Cases"
+      }
     ]
-  },
-  "title": "Streamgraph of Intentional Homicide Cases by State (2014-2022) with Color-Blind Friendly Palette"
+  }
 }
