@@ -3,6 +3,7 @@
   "description": "Streamgraph showing intentional homicide cases by state from 2014 to 2022 with color-blind friendly palette, larger and wider view.",
   "width": 1000,
   "height": 600,
+  "background": null,
   "data": {
     "url": "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/intentional%20homicide.csv",
     "format": {
@@ -19,7 +20,10 @@
       "field": "Year",
       "type": "ordinal",
       "axis": {
-        "title": "Year"
+        "title": "Year",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": false
       }
     },
     "y": {
@@ -27,7 +31,10 @@
       "field": "Total Cases",
       "stack": "center",
       "axis": {
-        "title": "Number of Cases"
+        "title": "Number of Cases",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": false
       }
     },
     "color": {
@@ -37,7 +44,9 @@
         "scheme": "tableau10"
       },
       "legend": {
-        "title": "State"
+        "title": "State",
+        "labelColor": "white",
+        "titleColor": "white"
       }
     },
     "tooltip": [
@@ -57,6 +66,5 @@
         "title": "Total Cases"
       }
     ]
-  },
-  "title": "Streamgraph of Intentional Homicide Cases by State (2014-2022) with Color-Blind Friendly Palette"
+  }
 }
