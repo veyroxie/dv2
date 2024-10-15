@@ -41,7 +41,7 @@
       "field": "State",
       "type": "nominal",
       "scale": {
-        "scheme": "tableau10"
+        "scheme": "set1"
       },
       "legend": {
         "title": "State",
