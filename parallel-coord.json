@@ -1,37 +1,99 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
-  "data": {
-    "values": [
-      { "Crime Type": "Attempted murder", "Year": 2000, "Cases": 0.187 },
-      { "Crime Type": "Causing bodily injuries", "Year": 2000, "Cases": 22.244 },
-      { "Crime Type": "Murder", "Year": 2000, "Cases": 2.401 },
-      { "Crime Type": "Rape", "Year": 2000, "Cases": 5.273 },
-      { "Crime Type": "Robbery with firearms", "Year": 2000, "Cases": 0.388 },
-      { "Crime Type": "Robbery without firearms", "Year": 2000, "Cases": 7.326 },
-      { "Crime Type": "Attempted murder", "Year": 2010, "Cases": 0.0 },
-      { "Crime Type": "Causing bodily injuries", "Year": 2010, "Cases": 26.760 },
-      { "Crime Type": "Murder", "Year": 2010, "Cases": 1.696 },
-      { "Crime Type": "Rape", "Year": 2010, "Cases": 11.777 },
-      { "Crime Type": "Robbery with firearms", "Year": 2010, "Cases": 0.0 },
-      { "Crime Type": "Robbery without firearms", "Year": 2010, "Cases": 0.0 },
-      { "Crime Type": "Attempted murder", "Year": 2022, "Cases": 0.0 },
-      { "Crime Type": "Causing bodily injuries", "Year": 2022, "Cases": 11.217 },
-      { "Crime Type": "Murder", "Year": 2022, "Cases": 0.707 },
-      { "Crime Type": "Rape", "Year": 2022, "Cases": 5.0445 },
-      { "Crime Type": "Robbery with firearms", "Year": 2022, "Cases": 0.0 },
-      { "Crime Type": "Robbery without firearms", "Year": 2022, "Cases": 0.0 }
-    ]
-  },
-  "width": 800,
-  "height": 300,
-  "background": null,
-  "layer": [
-    {
-      "mark": { "type": "rule", "color": "#ccc" },
-      "encoding": { "x": { "field": "Year", "type": "ordinal" } }
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
+    "data": {
+      "values": [
+        { "Crime Type": "Attempted murder", "Year": 2000, "Cases": 0.187 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2000, "Cases": 22.244 },
+        { "Crime Type": "Murder", "Year": 2000, "Cases": 2.401 },
+        { "Crime Type": "Rape", "Year": 2000, "Cases": 5.273 },
+        { "Crime Type": "Robbery with firearms", "Year": 2000, "Cases": 0.388 },
+        { "Crime Type": "Robbery without firearms", "Year": 2000, "Cases": 7.326 },
+        { "Crime Type": "Attempted murder", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2010, "Cases": 26.760 },
+        { "Crime Type": "Murder", "Year": 2010, "Cases": 1.696 },
+        { "Crime Type": "Rape", "Year": 2010, "Cases": 11.777 },
+        { "Crime Type": "Robbery with firearms", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Robbery without firearms", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Attempted murder", "Year": 2022, "Cases": 0.0 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2022, "Cases": 11.217 },
+        { "Crime Type": "Murder", "Year": 2022, "Cases": 0.707 },
+        { "Crime Type": "Rape", "Year": 2022, "Cases": 5.0445 },
+        { "Crime Type": "Robbery with firearms", "Year": 2022, "Cases": 0.0 },
+        { "Crime Type": "Robbery without firearms", "Year": 2022, "Cases": 0.0 }
+      ]
     },
-    {
-      "mark": { "type": "line", "tooltip": true },
-      "encoding": {
-        "color": { "type": "nominal",
+    "width": 800,
+    "height": 300,
+    "background": null,
+    "layer": [
+      {
+        "mark": { "type": "rule", "color": "#ccc" },
+        "encoding": {
+          "x": { "field": "Year", "type": "ordinal" },
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "tooltip": true
+        },
+        "encoding": {
+          "color": { "type": "nominal", 
+          "field": "Crime Type",
+          "scale": {
+            "scheme": "dark2"
+          } 
+        },
+        "detail": { "field": "Crime Type" },
+        "opacity": { "value": 0.7 },
+        "x": { "type": "ordinal", "field": "Year" },
+        "y": {
+          "type": "quantitative",
+          "field": "Cases",
+          "axis": null
+        },
+          "tooltip": [
+            { "field": "Year", "type": "ordinal", "title": "Year" },
+            { "field": "Crime Type", "type": "nominal", "title": "Crime Type" },
+            { "field": "Cases", "type": "quantitative", "title": "Cases (per 100,000 people)" }
+          ]
+        }
+      },
+      {
+        "encoding": {
+          "x": { "type": "ordinal", "field": "Year" },
+          "y": { "value": 0 }
+        },
+        "layer": [
+          {
+            "mark": { "type": "text", "style": "label" },
+            "encoding": {
+              "text": { "aggregate": "max", "field": "Cases" },
+              "color": { "value": "gray" }
+            }
+          },
+          {
+            "mark": { "type": "tick", "style": "tick", "size": 8, "color": "#ccc" }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "axisX": { 
+        "domain": false, 
+        "labelAngle": 0, 
+        "tickColor": "#ccc", 
+        "title": null,
+        "labelColor": "lightgray"},
+      "view": { "stroke": null },
+      "style": {
+        "label": { "baseline": "middle", "align": "right", "dx": -5 },
+        "tick": { "orient": "horizontal" },
+      },
+      "legend": {
+        "labelColor": "white",  
+        "titleColor": "white"  
+      }
+    }
+  }
