@@ -142,7 +142,7 @@
 
 
     .text-content {
-      max-width: 50ch;
+      max-width: 45ch;
       /* Adjust this value according to your font size and type */
       margin: 0 auto;
       /* Center the text block */
@@ -269,7 +269,10 @@
               "field": "crimeRateByCountry_crimeIndex",
               "type": "quantitative",
               "title": "Crime Rate Index",
-              "scale": { "type": "log", "scheme": "blueorange" },
+              "scale": { 
+                "type": "log", 
+                "scheme": "Plasma",
+                "reverse": true },
               "legend": { "title": "Crime Rate Index", "labelColor": "lightgray", "titleColor": "lightgray" }
             },
             "tooltip": [
@@ -286,20 +289,22 @@
   </script>
 
 
-  <div class="text-content">
-    <p>
-      <span style="color: rgb(182, 181, 181)">Note: The gray areas represent countries with missing data.</span>
-      <br>
-      <br>
-      <br>
-      At the time this dataset was collected, Venezuela had the highest crime rate index, while United Arab Emirates had
-      the lowest.
-    </p>
+<div class="text-content">
+  <p>
+    <span style="color: rgb(182, 181, 181)">Note: The gray areas represent countries with missing data.</span>
+    <br>
+    <br>
+    <br>
+    At the time this dataset was collected, Venezuela had the highest crime rate index <strong>(82.1)</strong>, while
+    United Arab Emirates had
+    the lowest <strong>(14.6)</strong>.
+  </p>
 
-    <br>
-    <br>
-    <br>
-  </div>
+  <br>
+  <br>
+  <br>
+</div>
+
 
 
 
@@ -507,16 +512,136 @@
 
 <br>
 <br>
+<br>
 
 
-  <div class="header-container">
-    <h2 class="header-text">Violent Crime Trend Comparison</h2>
-    <div class="header-bar"></div>
-  </div>
-  <br>
+<div class="header-container">
+  <h2 class="header-text">Violent Crime Trend Comparison</h2>
+  <div class="header-bar"></div>
+</div>
+<br>
+<br>
+<br>
 
+<!-- Div for the crime chart -->
+<div id="crime-chart"></div>
 
+<script>
+  const crimeChart = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
+    "data": {
+      "values": [
+        { "Crime Type": "Attempted murder", "Year": 2000, "Cases": 0.187 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2000, "Cases": 22.244 },
+        { "Crime Type": "Murder", "Year": 2000, "Cases": 2.401 },
+        { "Crime Type": "Rape", "Year": 2000, "Cases": 5.273 },
+        { "Crime Type": "Robbery with firearms", "Year": 2000, "Cases": 0.388 },
+        { "Crime Type": "Robbery without firearms", "Year": 2000, "Cases": 7.326 },
+        { "Crime Type": "Attempted murder", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2010, "Cases": 26.760 },
+        { "Crime Type": "Murder", "Year": 2010, "Cases": 1.696 },
+        { "Crime Type": "Rape", "Year": 2010, "Cases": 11.777 },
+        { "Crime Type": "Robbery with firearms", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Robbery without firearms", "Year": 2010, "Cases": 0.0 },
+        { "Crime Type": "Attempted murder", "Year": 2022, "Cases": 0.0 },
+        { "Crime Type": "Causing bodily injuries", "Year": 2022, "Cases": 11.217 },
+        { "Crime Type": "Murder", "Year": 2022, "Cases": 0.707 },
+        { "Crime Type": "Rape", "Year": 2022, "Cases": 5.0445 },
+        { "Crime Type": "Robbery with firearms", "Year": 2022, "Cases": 0.0 },
+        { "Crime Type": "Robbery without firearms", "Year": 2022, "Cases": 0.0 }
+      ]
+    },
+    "width": 800,
+    "height": 300,
+    "background": null,
+    "layer": [
+      {
+        "mark": { "type": "rule", "color": "#ccc" },
+        "encoding": {
+          "x": { "field": "Year", "type": "ordinal" },
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "tooltip": true
+        },
+        "encoding": {
+          "color": { "type": "nominal", 
+          "field": "Crime Type",
+          "scale": {
+            "scheme": "dark2"
+          } 
+        },
+        "detail": { "field": "Crime Type" },
+        "opacity": { "value": 0.7 },
+        "x": { "type": "ordinal", "field": "Year" },
+        "y": {
+          "type": "quantitative",
+          "field": "Cases",
+          "axis": null
+        },
+          "tooltip": [
+            { "field": "Year", "type": "ordinal", "title": "Year" },
+            { "field": "Crime Type", "type": "nominal", "title": "Crime Type" },
+            { "field": "Cases", "type": "quantitative", "title": "Cases (per 100,000 people)" }
+          ]
+        }
+      },
+      {
+        "encoding": {
+          "x": { "type": "ordinal", "field": "Year" },
+          "y": { "value": 0 }
+        },
+        "layer": [
+          {
+            "mark": { "type": "text", "style": "label" },
+            "encoding": {
+              "text": { "aggregate": "max", "field": "Cases" },
+              "color": { "value": "gray" }
+            }
+          },
+          {
+            "mark": { "type": "tick", "style": "tick", "size": 8, "color": "#ccc" }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "axisX": { 
+        "domain": false, 
+        "labelAngle": 0, 
+        "tickColor": "#ccc", 
+        "title": null,
+        "labelColor": "lightgray"},
+      "view": { "stroke": null },
+      "style": {
+        "label": { "baseline": "middle", "align": "right", "dx": -5 },
+        "tick": { "orient": "horizontal" },
+      },
+      "legend": {
+        "labelColor": "white",  
+        "titleColor": "white"  
+      }
+    }
+  };
 
+  // Embed the crime chart in the div with id="crime-chart"
+  vegaEmbed("#crime-chart", crimeChart, { mode: "vega-lite" }).then(console.log).catch(console.warn);
+</script>
+<br>
+<br>
+<br>
+<br>
+
+<div class = "text-content">
+  <p>
+    Overall, the data shows a clear decline in violent crimes across Malaysia from 2000 to 2022. Attempted murder and
+    robbery (with and without firearms) have decreased significantly, reaching near-zero levels by 2010. While rape and
+    bodily injuries peaked around 2010, they have since dropped by 2022. This overall downward trend reflects the likely
+    success of law enforcement, public safety initiatives, and social interventions in reducing crime rates.
+    </p>
 </body>
 
 </html>
