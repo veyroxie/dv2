@@ -188,14 +188,15 @@
     <div class="header-bar"></div>
   </div>
 
-  <div id="map"></div>
+<div id="map"></div>
 
-  <script>
-    // Load the map specification from GitHub
-      vegaEmbed("#map").then(console.log).catch(console.warn);
-      .then(console.log)
-      .catch(console.warn);
-  </script>
+<script>
+  // Load the map specification from GitHub
+  vegaEmbed("#map", "https://raw.githubusercontent.com/veyroxie/dv2/main/map.json", { mode: "vega-lite" })
+    .then(console.log)
+    .catch(console.warn);
+</script>
+
 
   <div class="text-content">
     <p>
