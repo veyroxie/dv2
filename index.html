@@ -193,188 +193,189 @@
       <br>
       When comparing global crime rates, we see contrasts between countries like Venezuela—where the crime rate
       index hits <strong>82.1</strong>—and safer nations like the United Arab Emirates with a much lower index of
-      <strong>14.6</strong>. This puts Malaysia's position at <span style="color:orange">58th</span>, which indicates that there's room for improvement in reducing overall crime levels.
+      <strong>14.6</strong>. This puts Malaysia's position at <span style="color:orange">58th</span>, which indicates
+      that there's room for improvement in reducing overall crime levels.
     </p>
     <br>
     <br>
   </div>
 
-        <br>        
-        <div class="header-container">
-          <h2 class="header-text">Violent Crime Trend Comparison</h2>
-          <div class="header-bar"></div>
-        </div>
-        <br>
-        <br>
-        
-        <!-- Div for the crime chart -->
-        <div id="crime-chart"></div>
-        
-        <script>
-          // Load the parallel coordinates chart specification from GitHub
-          vegaEmbed("#crime-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/parallel-coord.json", { mode: "vega-lite" })
-            .then(console.log)
-            .catch(console.warn);
-        </script>
-        
-        <br>
-        <br>
-        <br>
-        
-        <div class="text-content">
-          <p>
-            When we look at the overall violent crime trends across Malaysia, the data reveals an <span
-              style="color:orange; font-size: 1.5em;">obvious decline</span> in violent crimes from 2000 to 2022. While crimes
-            such as <strong>bodily injuries</strong> and <strong>rape</strong> saw peaks around 2010, the subsequent reduction
-            can be attributed to enhanced law enforcement efforts and a push for <span style="color:orange;">community-driven
-              safety initiatives</span>.
-            <br><br>
-            By 2022, these efforts seem to have paid off, as violent crime figures dropped significantly, reflecting the
-            positive outcomes of Malaysia's sustained focus on reducing violence.
-          </p>
-        </div>
-        
-        <br>
-        <br>
-        <br>
-        
-        <div class="header-container">
-          <h2 class="header-text">Intentional Homicide?</h2>
-          <div class="header-bar"></div>
-        </div>
-        
-        <br><br>
-        
-        <!-- Div for the stream chart -->
-        <div id="stream-chart"></div>
-        
-        <script>
-          // Load the stream graph from the GitHub link you provided
-          vegaEmbed("#stream-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/stream.json", { mode: "vega-lite" })
-            .then(console.log)
-            .catch(console.warn);
-        </script>
-        
-        <br>
-        
-        <!-- Clickable annotations for stream chart -->
-        <div class="text-content">
-          <p>
-            This stream graph tracks intentional homicide rates by state from 2014 to 2022, and paints a more detailed picture of
-            how homicide cases evolved in the country.
-            <br><br>
-            In <span style="font-size: 1.5em; color: orange;">2016</span>, we see the beginning of a steady <span
-              style="color: yellow;">decline</span> across multiple states. However, by <span
-              style="font-size: 1.5em; color: orange;">2019</span>, there’s a sharp increase in key states like Johor and
-            Selangor, signaling potential systemic challenges.
-            <br><br>
-            In <span style="font-size: 1.5em; color: orange;">2020</span>, a <span style="color: yellow;">notable drop</span>
-            occurs, likely influenced by the pandemic, which led to fewer interactions and possibly less criminal activity. By
-            <span style="font-size: 1.5em; color: orange;">2022</span>, however, a significant <span
-              style="color: yellow;">spike</span> is observed, suggesting the post-pandemic rebound and the possible impact of
-            socio-economic factors.
-          </p>
-        </div>
-        
-        <br>
-        <br>
-        <br>
+  <br>
+  <div class="header-container">
+    <h2 class="header-text">Violent Crime Trend Comparison</h2>
+    <div class="header-bar"></div>
+  </div>
+  <br>
+  <br>
 
-        <!-- Header for the Prisoner Index Lollipop Chart -->
-        <div class="header-container">
-          <h2 class="header-text">Top 5 State Prisoner Indexes by Year</h2>
-          <div class="header-bar"></div>
-        </div>
-        
-        <div class="text-content">
-          <p>
-            <br>
-            <br> <span style="color:lightgray">
-            Now, let’s dive into the crime situation within Malaysia itself. The chart below highlights the five states with
-            the highest prisoner indexes per 100,000 people between 2017 and 2022.
-            </span>
-          </p>
-          <br>
-          <br>
-        </div>
-        
-        <!-- Div for the prisoner index chart -->
-        <div id="prisoner-chart"></div>
-        
-        <script>
-          // Load the prisoner index chart specification from GitHub
-          vegaEmbed("#prisoner-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/lolli.json", { mode: "vega-lite" })
-            .then(console.log)
-            .catch(console.warn);
-        </script>
-        
-        <br>
-        <br>
-        
-        <div id="text-content">
-          <p>
-            <span style="color: lightgray">Click below to view notable changes!</span>
-          </p>
-        </div>
-        
-        <!-- Clickable annotations below the chart -->
-        <div class="translucent-overlay">
-          <div class="text-content">
-            <div id="annotations">
-              <p>
-                <a onclick="changeYear(2017, 'Melaka')">2017 - <span style="color:orange; font-size: 1.2em;">Melaka</span> had
-                  the highest index.</a> <br><br>
-                <a onclick="changeYear(2018, 'Kelantan')">2018 - <span style="color:orange; font-size: 1.2em;">Kelantan</span>
-                  remained stable, but Melaka dropped out of the top 5.</a> <br><br>
-                <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 -Selangor/Kuala Lumpur <strong>peaked</strong>
-                  significantly, indicating a concerning rise in crime rates.</a> <br><br>
-                <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a <span
-                    style="color:orange; font-weight:bold;">sharp decline</span> in prisoners, possibly due to pandemic
-                  restrictions and
-                  lockdowns.</a> <br><br>
-                <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor <strong>decreased slightly</strong>, possibly as a
-                  result
-                  of local interventions or social programs.</a> <br><br>
-                <a onclick="changeYear(2022, 'Melaka')">2022 - <span style="color:orange; font-size: 1.2em;">Melaka</span> rose
-                  back to
-                  the top, suggesting a resurgence in crime-related activities in this state.</a><br>
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+  <!-- Div for the crime chart -->
+  <div id="crime-chart"></div>
+
+  <script>
+    // Load the parallel coordinates chart specification from GitHub
+    vegaEmbed("#crime-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/parallel-coord.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
+  </script>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="text-content">
+    <p>
+      When we look at the overall violent crime trends across Malaysia, the data reveals an <span
+        style="color:orange; font-size: 1.5em;">obvious decline</span> in violent crimes from 2000 to 2022. While crimes
+      such as <strong>bodily injuries</strong> and <strong>rape</strong> saw peaks around 2010, the subsequent reduction
+      can be attributed to enhanced law enforcement efforts and a push for <span style="color:orange;">community-driven
+        safety initiatives</span>.
+      <br><br>
+      By 2022, these efforts seem to have paid off, as violent crime figures dropped significantly, reflecting the
+      positive outcomes of Malaysia's sustained focus on reducing violence.
+    </p>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="header-container">
+    <h2 class="header-text">Intentional Homicide?</h2>
+    <div class="header-bar"></div>
+  </div>
+
+  <br><br>
+
+  <!-- Div for the stream chart -->
+  <div id="stream-chart"></div>
+
+  <script>
+    // Load the stream graph from the GitHub link you provided
+    vegaEmbed("#stream-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/stream.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
+  </script>
+
+  <br>
+
+  <!-- Clickable annotations for stream chart -->
+  <div class="text-content">
+    <p>
+      This stream graph tracks intentional homicide rates by state from 2014 to 2022, and paints a more detailed picture
+      of
+      how homicide cases evolved in the country.
+      <br><br>
+      In <span style="font-size: 1.5em; color: orange;">2016</span>, we see the beginning of a steady <span
+        style="color: yellow;">decline</span> across multiple states. However, by <span
+        style="font-size: 1.5em; color: orange;">2019</span>, there’s a sharp increase in key states like Johor and
+      Selangor, signaling potential systemic challenges.
+      <br><br>
+      In <span style="font-size: 1.5em; color: orange;">2020</span>, a <span style="color: yellow;">notable drop</span>
+      occurs, likely influenced by the pandemic, which led to fewer interactions and possibly less criminal activity. By
+      <span style="font-size: 1.5em; color: orange;">2022</span>, however, a significant <span
+        style="color: yellow;">spike</span> is observed, suggesting the post-pandemic rebound and the possible impact of
+      socio-economic factors.
+    </p>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Header for the Prisoner Index Lollipop Chart -->
+  <div class="header-container">
+    <h2 class="header-text">Top 5 State Prisoner Indexes by Year</h2>
+    <div class="header-bar"></div>
+  </div>
+
+  <div class="text-content">
+    <p>
+      <br>
+      <br> <span style="color:lightgray">
+        Now, let’s dive into the crime situation within Malaysia itself. The chart below highlights the five states with
+        the highest prisoner indexes per 100,000 people between 2017 and 2022.
+      </span>
+    </p>
+    <br>
+    <br>
+  </div>
+
+  <!-- Div for the prisoner index chart -->
+  <div id="prisoner-chart"></div>
+
+  <script>
+    // Load the prisoner index chart specification from GitHub
+    vegaEmbed("#prisoner-chart", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/lolli.json", { mode: "vega-lite" })
+      .then(console.log)
+      .catch(console.warn);
+  </script>
+
+  <br>
+  <br>
+
+  <div id="text-content">
+    <p>
+      <span style="color: lightgray">Click below to view notable changes!</span>
+    </p>
+  </div>
+
+  <!-- Clickable annotations below the chart -->
+  <div class="translucent-overlay">
+    <div id="annotations">
+      <p>
+        <a onclick="changeYear(2017, 'Melaka')">2017 - <span style="color:orange; font-size: 1.2em;">Melaka</span> had
+          the highest index.</a> <br>
+        <a onclick="changeYear(2018, 'Kelantan')">2018 - <span style="color:orange; font-size: 1.2em;">Kelantan</span>
+          remained stable, but Melaka dropped out of the top 5.</a> <br>
+        <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 -Selangor/Kuala Lumpur <strong>peaked</strong>
+          significantly, indicating a concerning rise in crime rates.</a> <br>
+        <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a <span
+            style="color:orange; font-weight:bold;">sharp decline</span> in prisoners, possibly due to pandemic
+          restrictions and
+          lockdowns.</a> <br>
+        <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor <strong>decreased slightly</strong>, possibly as a
+          result
+          of local interventions or social programs.</a> <br>
+        <a onclick="changeYear(2022, 'Melaka')">2022 - <span style="color:orange; font-size: 1.2em;">Melaka</span> rose
+          back to
+          the top, suggesting a resurgence in crime-related activities in this state.</a>
+      </p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
-        <h3>References</h3>
-        <br>
-        <ul>
-          <li><a href="https://worldpopulationreview.com/country-rankings/crime-rate-by-country" target="_blank">World
-              Population Review. (2024). Crime Rate by Country.</a></li>
-          <br>
-              <li><a href="https://data.gov.my/data-catalogue/population_state" target="_blank">Data.gov.my. (2024). Population by
-              State in Malaysia.</a></li>
-          <br>
-              <li><a href="https://mysidc.statistics.gov.my/index.php?lang=en#" target="_blank">MySIDC. (2024). Malaysian Statistics
-              Department.</a></li>
-        </ul>
-        <br>
-        <br>
-        <div id="text-content">
-          <p>
-            <span style="color: gray">Clickable annotations were created with the help of ChatGPT</span>
-          </p>
-          <br>
-          <br>
-        </div>
+  <h3>References</h3>
+  <br>
+  <ul>
+    <li><a href="https://worldpopulationreview.com/country-rankings/crime-rate-by-country" target="_blank">World
+        Population Review. (2024). Crime Rate by Country.</a></li>
+    <br>
+    <li><a href="https://data.gov.my/data-catalogue/population_state" target="_blank">Data.gov.my. (2024). Population by
+        State in Malaysia.</a></li>
+    <br>
+    <li><a href="https://mysidc.statistics.gov.my/index.php?lang=en#" target="_blank">MySIDC. (2024). Malaysian
+        Statistics
+        Department.</a></li>
+  </ul>
+  <br>
+  <br>
+  <div id="text-content">
+    <p>
+      <span style="color: gray">Clickable annotations were created with the help of ChatGPT</span>
+    </p>
+    <br>
+    <br>
+  </div>
 
-        
-        </body>
-        
-        </html>
+
+</body>
+
+</html>
