@@ -49,7 +49,7 @@
       margin: 0 auto;
       padding: 0;
       word-wrap: break-word;
-      font-size: large;
+      font-size: medium;
       background-color: transparent;
       overflow-x: hidden;
       overflow-y: auto;
@@ -93,17 +93,13 @@
     }
 
     .translucent-overlay {
-      position: relative;
-      z-index: 1;
-      background-color: rgba(255, 255, 255, 0.4);
+      display: inline-block;  /* Makes the width fit the content */
+      background-color: rgba(248, 187, 107, 0.4);
       padding: 20px;
       margin: 20px auto;
-      max-width: 100%;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      max-width: 100%;  /* Ensures it doesn't exceed the screen width */
     }
 
     h1 {
@@ -152,8 +148,20 @@
       /* Center the text block */
       text-align: center;
       /* Optional: Justify text for better appearance */
-      font-size: larger;
+      font-size: large;
     }
+
+    #annotations a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    #annotations a:hover {
+      color: #ff6347;  /* Change color on hover (currently tomato color) */
+      text-decoration: underline;  /* Optional: Adds underline on hover */
+    }
+
   </style>
   <title>Crime Rates in Malaysia</title>
 </head>
@@ -179,8 +187,7 @@
       <br>
       <span style="color: rgb(182, 181, 181)">Below is a wider view of the crime index across
         countries. </span>
-      <br>
-      <br>
+      <br>    
       <br>
     </p>
 
@@ -298,7 +305,7 @@
 
   <!-- Header for the Prisoner Index Lollipop Chart -->
   <div class="header-container">
-    <h2 class="header-text">Top 5 State Crime Indexes by Year</h2>
+    <h2 class="header-text">Top 5 State Prisoner Indexes by Year</h2>
     <div class="header-bar"></div>
   </div>
 
@@ -425,7 +432,7 @@
         }
       },
       "annotations": {
-        "color": "white",
+        "color": "orange",
         "values": [
           { "Year": 2017, "State": "Melaka", "Text": "2017 - Melaka had the highest index." },
           { "Year": 2018, "State": "Kelantan", "Text": "2018 - Kelantan remained stable." },
@@ -461,41 +468,55 @@
     // Embed the prisoner index chart
     vegaEmbed("#prisoner-chart", prisonerChart, { mode: "vega-lite" }).then(console.log).catch(console.warn);
     // Function to update the year and highlight the state
-    function changeYear(year, state) {
-      prisonerChart.params[0].value = year;  // Update year
-      prisonerChart.params[1].value = state;  // Highlight selected state
-      vegaEmbed("#prisoner-chart", prisonerChart);  // Re-render the chart
-    }
+  function changeYear(year, state = null) {
+    prisonerChart.params[0].value = year;  // Update the selected year
+    prisonerChart.params[1].value = state;  // Reset selectedState to null (default color)
+    vegaEmbed("#prisoner-chart", prisonerChart).then((result) => {
+      // Re-render the chart with the updated state
+      if (state) {
+        prisonerChart.params[1].value = state;  // If a state is selected, highlight it
+        vegaEmbed("#prisoner-chart", prisonerChart);  // Re-render the chart to apply the state change
+      }
+    }).catch(console.warn);
+  }
 
   </script>
 
   <br>
+  <br>
 
   <div id="text-content">
     <p>
-      Click on the annotations below to view notable changes.
-      <br>
-      <br>
+      <span style="color: lightgray">Click below to view notable changes!</span>
     </p>
   </div>
 
   <!-- Clickable annotations below the chart -->
+<div class="translucent-overlay">
   <div id="annotations">
     <p>
       <a onclick="changeYear(2017, 'Melaka')">2017 - Melaka had the highest index.</a> <br>
       <a onclick="changeYear(2018, 'Kelantan')">2018 - Kelantan stable, Melaka no longer top 5.</a> <br>
       <a onclick="changeYear(2019, 'Selangor/Kuala Lumpur')">2019 - Selangor/KL peaked.</a> <br>
-      <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a sharp decline in crime.</a> <br>
+      <a onclick="changeYear(2020, 'Selangor/Kuala Lumpur')">2020 - Selangor/KL saw a sharp decline in prisoners.</a> <br>
       <a onclick="changeYear(2021, 'Johor')">2021 - Crime in Johor decreased slightly.</a> <br>
       <a onclick="changeYear(2022, 'Melaka')">2022 - Melaka rose back to the top.</a>
     </p>
-
-
-    <br>
-    <br>
-
-
   </div>
+</div>
+
+<br>
+<br>
+
+
+  <div class="header-container">
+    <h2 class="header-text">Violent Crime Trend Comparison</h2>
+    <div class="header-bar"></div>
+  </div>
+  <br>
+
+
+
 </body>
 
 </html>
