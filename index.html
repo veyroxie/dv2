@@ -192,7 +192,7 @@
 
   <script>
     // Load the map specification from GitHub
-    vegaEmbed("#map", "https://raw.githubusercontent.com/veyroxie/dv2/refs/heads/main/map.json", { mode: "vega-lite" })
+      vegaEmbed("#map").then(console.log).catch(console.warn);
       .then(console.log)
       .catch(console.warn);
   </script>
