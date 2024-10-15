@@ -22,7 +22,9 @@
       "value": null
     }
   ],
-  "transform": [{ "filter": "datum.Year == selectedYear" }],
+  "transform": [
+    { "filter": "datum.Year == selectedYear" }  // Filter by selected year
+  ],
   "encoding": {
     "y": {
       "field": "State",
@@ -65,10 +67,16 @@
       "encoding": {
         "color": {
           "condition": [
-            { "test": "datum.State == selectedState", "value": "blue" },
-            { "selection": "highlight", "value": "lightblue" }
+            {
+              "test": "datum.State == selectedState",  // Highlight selected state
+              "value": "blue"  // Use blue for the selected state
+            },
+            {
+              "selection": "highlight",  // Hover effect
+              "value": "lightblue"
+            }
           ],
-          "value": "orange"
+          "value": "orange"  // Default color for other states
         },
         "tooltip": [
           { "field": "State", "type": "nominal" },
