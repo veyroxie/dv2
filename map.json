@@ -73,8 +73,7 @@
           "legend": {
             "title": "Crime Rate Index",
             "labelColor": "lightgray",
-            "titleColor": "lightgray"
-          },
+            "titleColor": "lightgray"},
           "condition": {
             "selection": "highlight",
             "value": "yellow"  // Highlight color for country hover
