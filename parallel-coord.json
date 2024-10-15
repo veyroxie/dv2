@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Parallel Coordinates Plot for Crime Data (Normalized with Tooltip across Line)",
+  "data": {
+    "values": [
+      { "Crime Type": "Attempted murder", "Year": 2000, "Cases": 0.187 },
+      { "Crime Type": "Causing bodily injuries", "Year": 2000, "Cases": 22.244 },
+      { "Crime Type": "Murder", "Year": 2000, "Cases": 2.401 },
+      { "Crime Type": "Rape", "Year": 2000, "Cases": 5.273 },
+      { "Crime Type": "Robbery with firearms", "Year": 2000, "Cases": 0.388 },
+      { "Crime Type": "Robbery without firearms", "Year": 2000, "Cases": 7.326 },
+      { "Crime Type": "Attempted murder", "Year": 2010, "Cases": 0.0 },
+      { "Crime Type": "Causing bodily injuries", "Year": 2010, "Cases": 26.760 },
+      { "Crime Type": "Murder", "Year": 2010, "Cases": 1.696 },
+      { "Crime Type": "Rape", "Year": 2010, "Cases": 11.777 },
+      { "Crime Type": "Robbery with firearms", "Year": 2010, "Cases": 0.0 },
+      { "Crime Type": "Robbery without firearms", "Year": 2010, "Cases": 0.0 },
+      { "Crime Type": "Attempted murder", "Year": 2022, "Cases": 0.0 },
+      { "Crime Type": "Causing bodily injuries", "Year": 2022, "Cases": 11.217 },
+      { "Crime Type": "Murder", "Year": 2022, "Cases": 0.707 },
+      { "Crime Type": "Rape", "Year": 2022, "Cases": 5.0445 },
+      { "Crime Type": "Robbery with firearms", "Year": 2022, "Cases": 0.0 },
+      { "Crime Type": "Robbery without firearms", "Year": 2022, "Cases": 0.0 }
+    ]
+  },
+  "width": 800,
+  "height": 300,
+  "background": null,
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#ccc" },
+      "encoding": { "x": { "field": "Year", "type": "ordinal" } }
+    },
+    {
+      "mark": { "type": "line", "tooltip": true },
+      "encoding": {
+        "color": { "type": "nominal",
